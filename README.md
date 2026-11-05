@@ -42,7 +42,19 @@
 <!-- Your community, and what your classifier sorts posts into. Three or four
      sentences. -->
 
+The classifier judges each post on three questions:
 
+1. **Does it show concrete test results?** Some posts report generation
+   speed, response latency, or how many questions the model got right; others
+   only say it's "really strong" or "amazing" without showing any results.
+2. **Does it state the test conditions?** Some posts specify the hardware,
+   model version, quantization method, and test parameters, and share the
+   prompts or code; others never explain how they tested, which makes the
+   claims hard for anyone else to check.
+3. **Does it report failures and limitations?** Some posts show wrong answers
+   and note that the sample was small, or that they only tested on one device
+   or in one scenario; others show only the successes and conclude the model
+   is great overall.
 
 ---
 
