@@ -287,26 +287,21 @@ All three are pile (a): clear rules that I applied loosely. Two of the three (#1
 
 ## The Improvement
 
-**What I changed:**
+**What I changed:** I re-checked every row labeled `evidence_based` (76 rows) against my own rule: a post needs a checkable *result*, not just numbers, model names or technical words. An AI listed the quote it saw as evidence for each row and flagged 21 weak ones; I read those 21 and changed 16 (13 → `unsupported_claim`, 3 → `question`). Nothing else changed. New counts: evidence_based 60, unsupported_claim 73, question 63. Two of the changed rows (11 and 18) were from my cold-labeled 20, so I made this mistake even without AI help.
 
-**Which diagnosis pointed at it:**
+**Which diagnosis pointed at it:** The confusion matrix sent 12 of 18 non-`evidence_based` test posts to `evidence_based`, and my agreement report showed 2 of my 3 disagreements came from treating any number as evidence. Both pointed at the `evidence_based` boundary in my labels.
 
 ### Run Log — After
 
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
 |---|---|---|---|---|---|
-| 1.  |  |  |  |  |  |
-| 2.  |  |  |  |  |  |
-| 3.  |  |  |  |  |  |
-| 4.  |  |  |  |  |  |
-| 5.  |  |  |  |  |  |
+| 1. Overall accuracy | ≥ 0.75 | 0.567 | 0.533 | 0.567 | MISSED |
+| 2. Every label F1 (lowest) | ≥ 0.70 | 0.286 | 0.167 | 0.000 | MISSED |
+| 3. Largest label share of labels.csv | ≤ 50% | 37% | 37% | 37% | MET |
+| 4. Agreement with staff labels | ≥ 90% | 90% (unchanged) | — | — | MET |
+| 5. Most-sure third accuracy (revised) | ≥ 0.90 | 0.700 | 0.800 | 1.000 | MISSED |
 
-**Did it help, and how do I know:**
-
-<!-- If it didn't, say so. Relabelling that didn't help is a genuinely
-     interesting result and earns full credit. -->
-
-
+**Did it help, and how do I know:** Not overall. Accuracy barely moved (0.533–0.567 before and after), and macro F1 rose only slightly on two seeds and fell on one. The relabel fixed the problem I aimed at: `evidence_based` F1 rose to 0.588–0.737 and `unsupported_claim` to 0.621–0.667, and the seed-42 matrix now sends only 2 posts to `evidence_based` by mistake instead of 12. But the bias moved instead of disappearing: 7 of 10 `question` posts are now called `unsupported_claim`, and `question` F1 fell to 0.000–0.286. One caveat: changing labels also changed which posts landed in each test split, so before and after were not scored on exactly the same posts.
 
 ---
 
