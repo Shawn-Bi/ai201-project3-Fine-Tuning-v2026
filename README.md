@@ -156,7 +156,17 @@ Community: r/LocalLLaMA
 - *What came back:* The first request failed with HTTP 403.
 - *What I changed:* I let it add an honest User-Agent naming this as a student project. The script then saved 196 posts.
 
-**Pre-labelling disclosure:** Rows 21–196 were pre-labeled by Claude Code using my README definitions and rules. I reviewed all 176 and made 0 corrections. Rows 1–20 were labeled by me with no AI.
+**Moment 3 (unit 6)**
+- *What I asked for:* I asked Claude Code to list every `evidence_based` row with the exact quote it saw as evidence, without changing any labels.
+- *What came back:* 1 row with no evidence at all, plus about 20 weak rows (only a link, or someone else's numbers).
+- *What I changed:* I read the 21 flagged rows and decided each one myself: 16 relabeled, 5 kept. This is how the AI helped me spot the pattern in my own errors.
+
+**Moment 4 (unit 6)**
+- *What I asked for:* I asked Claude Code whether results_three_seeds_before.json could measure my criterion 5 (confidence ≥ 0.8).
+- *What came back:* It couldn't. The file stores only thirds, and the mean confidence was about 0.40.
+- *What I changed:* I revised criterion 5 underneath the original in criteria.md, keeping the same 0.90 bar.
+
+**Pre-labelling disclosure:** Rows 21–196 were pre-labeled by Claude Code using my README definitions and rules. I reviewed all 176 and made 0 corrections. Rows 1–20 were labeled by me with no AI.In unit 6 I re-checked the `evidence_based` rows and relabeled 16 of them, including 2 from my cold 20 (see The Improvement).
 
 
 
@@ -307,15 +317,14 @@ All three are pile (a): clear rules that I applied loosely. Two of the three (#1
 
 ## What's Still Broken
 
-<!-- For each criterion still missed: what you'd do, and why you stopped. -->
+**Criterion 1 (accuracy ≥ 0.75) — still missed (0.533–0.567).** Next I would add about 30 more posts for whichever label is weakest, labeled with the same care, because 196 posts with 9–12 per label in each test split is too few to separate three overlapping labels. I stopped because the unit allows only one change, and I used mine on the relabel.
 
+**Criterion 2 (every label F1 ≥ 0.70) — still missed; the weak label moved from `unsupported_claim` to `question`.** Next I would re-check the `question` / `unsupported_claim` boundary the same way I re-checked `evidence_based`, especially posts that ask a question but are mostly opinion. I stopped for the same reason: one change per unit.
 
+**Criterion 5 (most-sure third ≥ 0.90) — still missed (0.7, 0.8, 1.0).** Each third is only 10 posts, so one post moves the score by 0.1. I'd need a bigger test set before this number means much.
 
-**The gap between what I meant my labels to capture and what the model
-learned:**
-<!-- Two sentences. Your confusion matrix is the evidence. -->
-
-
+**The gap between what I meant my labels to capture and what the model learned:**
+I meant my labels to capture whether a post shows a checkable result, asks for help, or just gives an opinion. The confusion matrices show the model instead learned surface signals, first "numbers and technical words = `evidence_based`", and after my relabel "no numbers = `unsupported_claim`", which pulled in 7 of 10 `question` posts.
 
 <!-- ═════════════════════════════════════════════════════════════════════
 
