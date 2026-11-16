@@ -108,6 +108,10 @@ Predictions with confidence ≥ 0.8 are at least 0.90 accurate.
 **Why this target:**
 Clear-cut posts (a benchmark number, a direct “how do I fix this?”) should be easy; if confident predictions miss, the model learned something other than my cues.
 
+> **Revised in unit 6:** Predictions in the most-sure third of the test set are at least 0.90 accurate.
+>
+> **Why revised:** "Confidence >= 0.8" could not be measured. The notebook only records accuracy for the most-sure and least-sure thirds, not each prediction's confidence. And the model's mean confidence was about 0.40, so at most 3-4 of 30 predictions could even reach 0.8. I kept the same 0.90 bar and changed only what gets measured.
+
 
 ---
 

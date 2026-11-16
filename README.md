@@ -197,11 +197,11 @@ Training helped overall (+0.267 accuracy), almost entirely by learning `evidence
 
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
 |---|---|---|---|---|---|
-| 1.  |  |  |  |  |  |
-| 2.  |  |  |  |  |  |
-| 3.  |  |  |  |  |  |
-| 4.  |  |  |  |  |  |
-| 5.  |  |  |  |  |  |
+| 1. Overall accuracy | ≥ 0.75 | 0.567 | 0.533 | 0.533 | MISSED |
+| 2. Every label F1 (lowest) | ≥ 0.70 | 0.364 | 0.000 | 0.364 | MISSED |
+| 3. Largest label share of labels.csv | ≤ 50% | 39% | 39% | 39% | MET |
+| 4. Agreement with staff labels | ≥ 90% | 90% (one check, not seeded) | — | — | MET |
+| 5. Most-sure third accuracy (revised) | ≥ 0.90 | 0.900 | 0.700 | 0.800 | MISSED |
 
 ### Confusion matrix
 
@@ -228,24 +228,17 @@ Training helped overall (+0.267 accuracy), almost entirely by learning `evidence
 
 | # | Criterion | Target | Verdict | How I decided |
 |---|---|---|---|---|
-| 1 |  |  |  |  |
-| 2 |  |  |  |  |
-| 3 |  |  |  |  |
-| 4 |  |  |  |  |
-| 5 |  |  |  |  |
+| 1 | Overall accuracy | ≥ 0.75 | MISSED | All three seeds (0.533-0.567) are below 0.75. |
+| 2 | Every label F1 | ≥ 0.70 | MISSED | `unsupported_claim` was 0.364, 0.000, 0.364; `question` was 0.421-0.571. Only `evidence_based` came close (0.649-0.667). |
+| 3 | No label above 50% | ≤ 50% | MET | Largest label is `evidence_based` at 39%. A dataset property, the same for every seed. |
+| 4 | Agreement with staff | ≥ 90% | MET | 27/30 = 90%, exactly at target. Measured once; not seed-dependent. |
+| 5 | Most-sure third accuracy (revised) | ≥ 0.90 | MISSED | Hit 0.90 on seed 42 only; 0.70 and 0.80 on the others. |
 
 **Diagnoses**
 
-<!-- For each miss: the cause, and how you know. The four common causes are:
-     too few examples for a label, a boundary you applied inconsistently, a
-     genuinely hard label pair, and a task the model can't reach from this
-     much data.
+**Criteria 1 and 2 (accuracy and per-label F1):** mostly a labeling problem at the `evidence_based` boundary, plus small test counts. My confusion matrix shows 12 of the 18 non-`evidence_based` test posts were called `evidence_based`, and 0 went the other way. My agreement report backs this up: all 3 of my disagreements with staff were pile (a), and 2 of them came from treating any number as evidence. If I did that on the staff set, I likely did it in my own 196 labels too, so the model learned "numbers or technical words = `evidence_based`". `unsupported_claim` also has only 9 test posts, so one or two misses swing its F1 a lot, which explains the 0.000 on seed 7.
 
-     ⚠️ Use your agreement report as evidence. It is the only instrument you
-     have that can tell a LABELLING problem from a MODEL problem, and this
-     section is graded on whether you used it that way. -->
-
-
+**Criterion 5 (confidence):** the model is barely confident at all. Its mean confidence is about 0.40, only a little above the 0.33 of random guessing among three labels. With 196 examples and inconsistent labels at the main boundary, the model never got sure enough for its "most confident" predictions to be reliably right.
 
 ---
 
