@@ -64,7 +64,7 @@ Community: r/LocalLLaMA
 
 ### `evidence_based`
 
-**Definition:** The post contains at least one checkable piece of evidence: test numbers, test conditions (hardware/model/quantization), an official link, or raw output.
+**Definition:** The post contains at least one checkable result — a test number, raw output, or an official link. Test conditions (hardware/model/quantization) alone do not count.
 
 **Example 1:**
 > "MoE offload on a 3090: prefill 345 -> 466 t/s" — before/after numbers, hardware, and commands. https://www.reddit.com/r/LocalLLaMA/comments/1xx1owx/
@@ -103,6 +103,10 @@ Community: r/LocalLLaMA
 - News posts are `evidence_based` only if they include an official link.
 - Judge only by the post's text. Evidence that appears only in an image does not count.
 - A post that asks readers specific questions to decide what to build next (feature requests, feedback) counts as asking for help → `question`, even if it includes an official link.
+- A self-reported result number (e.g. "~90% on my eval set") counts as evidence, even if the data is private.
+- Test conditions without any result (number or output) are not evidence → `unsupported_claim` if the post makes a judgment.
+- Asking for help = asking about the poster's own specific problem or choice ("which quant should I try?", "how do I fix this?"). Asking for opinions ("what do you think?", "anyone agree?") is not asking for help; label by the body.
+
 ---
 
 ## The Dataset
