@@ -180,8 +180,7 @@ Community: r/LocalLLaMA
 | F1 — `label_two` |  |  |  |
 
 **What I predicted before I looked:**
-<!-- Milestone 1 asks you to write this BEFORE seeing the trained numbers. A
-     prediction made afterwards isn't one. -->
+I predict the trained model will beat the baseline most on `evidence_based`, because it saw 76 examples of that label during training, while the baseline scored 0 on it using only my definitions.
 
 **What the gap actually means:**
 <!-- If the baseline matched your trained model, your fine-tuning added
