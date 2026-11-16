@@ -257,50 +257,39 @@ Training helped overall (+0.267 accuracy), almost entirely by learning `evidence
      data/staff_taxonomy.md, not your own — so every argument below is made
      from those definitions and those decision rules. -->
 
-**Agreement rate:** ___ / 30 = ___%
-
-<!-- Nobody grades this number. A 60% who argues every disagreement from the
-     stated rules beats a 95% who wrote "staff was right" nine times. Several
-     of the 30 were chosen because they're genuinely ambiguous — you should be
-     winning some of these. -->
+**Agreement rate:** 27 / 30 = 90%
 
 **Disagreements**
 
-<!-- Three lines each: the post, both labels, and who you think is right and
-     why — grounded in the staff definitions you were both applying.
-
-     Then sort each into one of three piles:
-       (a) the rule covered it and I applied it loosely → a consistency problem
-       (b) the rule genuinely doesn't say               → a gap in the definitions
-       (c) the rule is ambiguous here and my reading is defensible → argue it.
-           This is a legitimate win.
-
-     Pile (a) is the one that matters most for your diagnosis: if you applied a
-     written rule two different ways on 30 posts, that is direct evidence about
-     what you did across your own 200. -->
-
 **1.**
-> *The post:*
+> *The post:* "Times are down about 3% since the shoe rules changed, so obviously the shoes are the whole story and the sport has a problem."
 >
-> *Staff said / I said:*
+> *Staff said / I said:* `hot_take` / `analysis`
 >
-> *My call, and why:*
+> *My call, and why:* Staff is right. The author reaches the conclusion first ("so obviously"); the 3% is decoration, not the reason. Rule 1 says the fact must carry the argument.
 >
-> *Which pile:*
+> *Which pile:* (a) — the rule covered it and I applied it loosely.
 
 **2.**
-> *The post:*
+> *The post:* "Wind was so bad on the out section I was leaning at about 20 degrees. Coming back felt like cheating."
 >
-> *Staff said / I said:*
+> *Staff said / I said:* `reaction` / `analysis`
 >
-> *My call, and why:*
+> *My call, and why:* Staff is right. "About 20 degrees" is the writer's own estimate, not a checkable fact, and it doesn't argue anything. The post reports what just happened to the writer and how it felt ("felt like cheating"). Rule 3: without a load-bearing checkable fact, it isn't analysis.
 >
-> *Which pile:*
+> *Which pile:* (a) — the rule covered it and I applied it loosely.
+
+**3.**
+> *The post:* "Just realised the shoes I set every PB in this year are the ones I bought by accident in the wrong size."
+>
+> *Staff said / I said:* `reaction` / `hot_take`
+>
+> *My call, and why:* Staff is right. The post is about the writer's own discovery ("Just realised... I set... I bought") and makes no general claim about the world. Rule 2: about the writer means reaction. I marked this one "?" while labeling.
+>
+> *Which pile:* (a) — the rule covered it and I applied it loosely.
 
 **What the pattern in my disagreements tells me:**
-
-
-
+All three are pile (a): clear rules that I applied loosely. Two of the three (#1, #2) came from treating any number as evidence. That is the same mistake my model makes: it calls 6 `unsupported_claim` and 6 `question` posts `evidence_based`. This suggests my own 196 labels may also have called some posts `evidence_based` just because they contained numbers or technical terms, so part of the model's confusion is likely a labeling problem, not just a model problem.
 ---
 
 ## The Improvement
