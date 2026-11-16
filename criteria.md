@@ -53,60 +53,60 @@ whether you hit them:
 
 ## 1.
 
-<!-- Your criterion. It must name a number. -->
+Overall accuracy is at least 0.75 on the held-out set.
 
 
 
 **Why this target:**
-
+My labels depend on visible cues (numbers, links, help sentences), which a text model should pick up well above the ~33% guessing rate.
 
 
 ---
 
 ## 2.
 
-<!-- Your criterion. -->
+Every label has an F1 of at least 0.70 on the held-out set.
 
 
 
 **Why this target:**
-
+unsupported_claim borders both other labels, so it will likely be weakest; 0.70 makes sure it isn’t sacrificed for the others.
 
 
 ---
 
 ## 3.
 
-<!-- Your criterion. -->
+No label is more than 50% of labels.csv.
 
 
 
 **Why this target:**
-
+r/LocalLLaMA’s New feed is full of questions; without a cap, question would swamp the smaller labels.
 
 
 ---
 
 ## 4.
 
-<!-- Your criterion. -->
+My labels agree with staff labels on the same posts at least 90% of the time.
 
 
 
 **Why this target:**
-
+My rules use visible cues and were stress-tested, so someone following them should label almost as I do.
 
 
 ---
 
 ## 5.
 
-<!-- Your criterion. -->
+Predictions with confidence ≥ 0.8 are at least 0.90 accurate.
 
 
 
 **Why this target:**
-
+Clear-cut posts (a benchmark number, a direct “how do I fix this?”) should be easy; if confident predictions miss, the model learned something other than my cues.
 
 
 ---
