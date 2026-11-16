@@ -102,6 +102,7 @@ Community: r/LocalLLaMA
 - A closing "thoughts?" does not count as asking for help; label by the body.
 - News posts are `evidence_based` only if they include an official link.
 - Judge only by the post's text. Evidence that appears only in an image does not count.
+- A post that asks readers specific questions to decide what to build next (feature requests, feedback) counts as asking for help → `question`, even if it includes an official link.
 ---
 
 ## The Dataset
