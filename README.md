@@ -174,17 +174,17 @@ Community: r/LocalLLaMA
 
 | Measure | Baseline | Trained | Difference |
 |---|---|---|---|
-| Overall accuracy |  |  |  |
-| Macro F1 |  |  |  |
-| F1 — `label_one` |  |  |  |
-| F1 — `label_two` |  |  |  |
+| Overall accuracy | 0.300 | 0.567 | +0.267 |
+| Macro F1 | 0.162 | 0.497 | +0.335 |
+| F1 — `evidence_based` | 0.000 | 0.667 | +0.667 |
+| F1 — `question` | 0.486 | 0.462 | -0.025 |
+| F1 — `unsupported_claim` | 0.000 | 0.364 | +0.364 |
 
 **What I predicted before I looked:**
 I predict the trained model will beat the baseline most on `evidence_based`, because it saw 76 examples of that label during training, while the baseline scored 0 on it using only my definitions.
 
 **What the gap actually means:**
-<!-- If the baseline matched your trained model, your fine-tuning added
-     nothing — and that is a real finding, not a failure. Say it plainly. -->
+Training helped overall (+0.267 accuracy), almost entirely by learning `evidence_based` and `unsupported_claim`, which the baseline got 0 on. On `question` it added nothing (-0.025): help requests are easy to spot from the wording, so the untrained model already did as well.
 
 
 
@@ -208,16 +208,14 @@ I predict the trained model will beat the baseline most on `evidence_based`, bec
 <!-- ⚠️ TYPED AS A MARKDOWN TABLE. The notebook prints one ready to paste.
      An image of a matrix earns nothing. -->
 
-| true \ predicted |  |  |  |
+| true \ predicted | evidence_based | unsupported_claim | question |
 |---|---|---|---|
-| **** |  |  |  |
-| **** |  |  |  |
-| **** |  |  |  |
+| **evidence_based** | 12 | 0 | 0 |
+| **unsupported_claim** | 6 | 2 | 1 |
+| **question** | 6 | 0 | 3 |
 
 **My biggest off-diagonal number, and what it means:**
-<!-- Not "the model made mistakes" — WHICH boundary it didn't learn, and which
-     direction. "7 real analysis posts were called hot_take and only 3 went the
-     other way" is a direction, not just an error rate. -->
+6 real `unsupported_claim` posts were called `evidence_based`, and 0 went the other way (the same happened to 6 `question` posts). The model leans hard toward `evidence_based`: it seems to react to technical words like model names and hardware, not to whether the post actually shows a checkable result.
 
 
 
