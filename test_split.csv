@@ -1,0 +1,860 @@
+text,label,note
+"What do you consider to be the minimum performance (t/s) for local Agent workflows?
+What would you say is the minimum amount of tokens per second you would tolerate for your local agent workflows?  
+  
+I have been trying [pi.dev](http://pi.dev) connected to a llama.cpp instance running Qwen3.6-27B-Q6\_K\_L with 200K context running on an RTX A6000. I get about **26 t/s** and is surprisingly usable. About the same user experience I get with Claude Code connected to Anthropic. But I have just been fooling around with relative simple prompts so far. I'm trying out Brave search API.",evidence_based,prelabeled
+"Best way to upgrade my pc to improve t/s
+Hi all, I bought a new pc last year and after experimenting with llms for the last months I have some doubts.  I can run 7b, 13b and even 20/30b model reasonably fast but the 70b (I use the q3 quantization, GGUF format) run at 1t/s using windows 11. I´m thinking about how to upgrade my pc so I can get at least  2/3 t/s with a q4 70b.  My specs are:
+
+ \-MSI PRO B760-P WIFI DDR4
+
+\-Intel 13700 cpu  (the NOT k model, and it´s a little undervolted)
+
+\-Nvidia 4080 16Gb gpu
+
+\-2x16gb 3200mHZ CL16 RAM
+
+\-2 NVMe SSDs
+
+\-1 old HDD from my old computer
+
+\-Seasonic 850W gold psu
+
+The option I though were:
+
+a) Substitute the old hdd for a bigger sata ssd, make a partition and install a linux distro that I would use in dual boot only for llms.
+
+b) Adding a 3060 12gb or a 4060ti 16gb as a second gpu.  I would only use the second gpu for the llms.
+
+c) Both?
+
+So, what are the pros and cons? Other options? Can my psu support a second GPU? Is there a difference in performance when running the models in a NVMe SSD compared to a sata SSD?  There would be compatibility problems using the 4080 and a 3060 as those gpus are from different generations?   How much performance improvement can I expect? 
+
+Thanks a lot for the help!
+
+&#x200B;",question,prelabeled
+"From the finest minds of our age to the dumbest monkeys on the planet
+How is it possible for a sub to degenerate so much in 12 months?
+
+  
+What is the mechanism that drives this?
+
+  
+",unsupported_claim,prelabeled
+"Qwen4 Flash wishlist
+After using 3.8QFN for some time I have to the conclusion that my wish list for QF4 now only consists of these points.
+
+1. The model can talk to you in a human understandable language
+
+2. See point 1
+
+3. General improvement in reasoning/intelligence, but mostly see point 1
+
+  
+That's about it.
+
+  
+If I could graft 3.8 27B Answer/Personality style onto QFN I would've done it yesterday.",unsupported_claim,prelabeled
+"Do you have your own benchmark for an LLM? Do you have multiple for different kinds/tasks/applications?
+I use LLM's for many different things. They're often my alternative to search engines, I use it for brain storming, I use it for reviewing documents and analyzing scientific studies, and occasionally I'll use it for some coding and web development (I have a background in C#, R, Python, and C, but have been out of the field for quite a long time already; I'm a psychologist these days).
+
+Recently I've been developing my own ""benchmark"". I attempt to evaluate the following dimensions:
+
+* Step by step reasoning, causal explanatory chains; can it reason logically in steps?
+* Mathematical and symbolic reasoning; how does it perform in mathematics?
+* Instruction following, constraint adherence; does it adhere to my instructions or does it use my instructions loosely or even overrule them? When I set constraints, does it comply?
+* Ambiguity and clarification; how does it respond to questions that don't have straight forward answers? How does it handle subtleties and nuances?
+* Explanation versus description; how good is it at explaining mechanisms beyond merely describing them, when I ask how something works?
+* Online search and information evaluation; how does it perform in terms of answering my online search query, what is the quality of the information it finds, and does it critically reflect on the information and sources?
+
+I'm still working on it, and it's not even very serious, it's rather more something I just have fun with, but it's interesting to see how different models compare, and how small the differences can be between the massive models served by AI-companies and the small locally run models.
+
+I was surprised to find that on the 15 or so questions that I've formulated, for my standards, GPT-OSS:20b often did *better* than the models by OpenAI and Mistral (the main ones I tested so far). I only have 24GB integrated memory (Mac M4 Pro) so I can't run bigger local models. I noticed that GLM-4.7-REAP-23b-a3b performed much worse than QWEN-3-VL-8b. GLM often got stuck in loops. I'd be glad to dive deeper in the evaluations and comparisons in the future.
+
+Do you have a specific benchmark or benchmarks for different situations that you use?",question,prelabeled
+"Audio (ASR/TTS) on llama.cpp
+Hey everyone,
+
+I've been using audio.cpp for a while now, and it's quite nice. However I've noticed that Yue2, Qwen3-ASR and Qwen3-TTS got supported in comfyui / llama.cpp.
+
+For llama.cpp I was wondering about the state of support for ASR / TTS, and which other models are supported.
+
+So far I found these discussions and PRs on ASR / TTS support:  
+[https://github.com/ggml-org/llama.cpp/issues/21956](https://github.com/ggml-org/llama.cpp/issues/21956)  
+[https://github.com/ggml-org/llama.cpp/issues/31754](https://github.com/ggml-org/llama.cpp/issues/31754)  
+[https://github.com/ggml-org/llama.cpp/pull/19441](https://github.com/ggml-org/llama.cpp/pull/19441)  
+[https://github.com/ggml-org/llama.cpp/pull/26254](https://github.com/ggml-org/llama.cpp/pull/26254)  
+[https://github.com/ggml-org/llama.cpp/pull/31257](https://github.com/ggml-org/llama.cpp/pull/31257)  
+[https://github.com/ggml-org/llama.cpp/pull/26871](https://github.com/ggml-org/llama.cpp/pull/26871)  
+[https://github.com/ggml-org/llama.cpp/pull/14862](https://github.com/ggml-org/llama.cpp/pull/14862)  
+[https://github.com/ggml-org/llama.cpp/pull/20638](https://github.com/ggml-org/llama.cpp/pull/20638)  
+[https://github.com/ggml-org/llama.cpp/pull/30993](https://github.com/ggml-org/llama.cpp/pull/30993)  
+[https://github.com/ggml-org/llama.cpp/pull/31613](https://github.com/ggml-org/llama.cpp/pull/31613)
+
+I also know from testing directly that Gemma 4 (E2B / E4B / 12B) has working audio input. 
+
+If anyone else has experience here with ASR / TTS on llama.cpp? How did it go for you? How does it compare to audio.cpp when both inference engines support the model?",question,prelabeled
+"I run a daily isekai guessing-game pipeline on a DGX Spark with Qwen3.6-35B-A3B (vLLM) and Qwen-Image (ComfyUI, fp8)
+This is a hobby project, not a product pitch. I saw a TikTok where people rewrote famous movies and games as over-long isekai light-novel titles, and I wanted to see how far I could take that with local models. The game is at https://itsisekai.com. Five quests a day, guess the original.
+
+**Hardware.** NVIDIA DGX Spark (GB10, 20 Arm cores, 121 GB unified memory), set up as a self-hosted GitHub Actions runner. A nightly workflow (or a manual run) runs the pipeline on the same box as the models. No API fees for generation.
+
+**Models.**
+
+- Text and judge: Qwen3.6-35B-A3B, official FP8 build, served with vLLM (OpenAI-style API). fp8 KV cache, 128K context, MTP speculative decoding with 3 draft tokens, prefix caching, and 45% of GPU memory so ComfyUI fits beside it. The judge is the same model, and thinking is left on. Generation runs about 70 tok/s typically, peaking around 240 tok/s.
+- Images: Qwen-Image in ComfyUI with the official fp8 weights (`qwen_image_fp8_e4m3fn` + `qwen_2.5_vl_7b_fp8_scaled` encoder), 832x1248, 20 steps, cfg 2.5, euler/simple. One render takes about 64 seconds (around 3.15 s per step).
+- I had to drop vLLM `--gpu-memory-utilization` from 0.80 to 0.45 so ComfyUI fits beside it.
+
+**Pipeline.** It fills missing quests for the next several days. All missing titles are written first, one at a time, so later quests can see the answers already picked. Then covers are drawn. A day is only saved when all its quests succeed, so the site never shows a half-filled day.
+
+For each quest the model writes the answer, hints, a 10-40 word title that can't contain the answer, and an art prompt. A second ""how obvious is this title?"" check can send it back for a rewrite. The cover is judged on the image alone: if the model can name the work, the prompt is rewritten more abstractly and redrawn, up to 3 times. If every try still gives it away, the cover stays sealed until the player finishes the quest.
+
+**Timings** from a production run on Nov 15 (8 quests across 2 days, 0 failed). The whole run took 61 min 29 s.
+
+- Titles, including the obviousness check and rewrites: 2 min 14 s to 6 min, average 4 min 26 s. Four of the eight were first judged too obvious and rewritten.
+- Cover attempts, draw + judge together: 1 min 38 s to 3 min 34 s, average 2 min 23 s. About 64 s of that is the render; the rest is the vision judge thinking about whether it can guess the work.
+- The judge passed 8 of 10 cover attempts. Two covers gave it away on try 1 and passed on try 2. None had to be sealed.
+
+**What went wrong.** vLLM's guided JSON didn't mix with Qwen thinking: requests could jam and loop until they timed out. I dropped guided JSON for Qwen and just parse the JSON out of the reply. Without a presence penalty, Qwen could also think in circles until it filled the context; I set `presence_penalty` 1.5 and `max_tokens` 16384. One failed model call used to wipe out a whole day; now it retries and moves on. I also learned not to overlap manual workflow runs with the nightly cron.
+
+Happy to answer questions. I'm not selling anything, I just thought the timings and the ""don't use guided JSON on a thinking Qwen"" bit might be useful.",evidence_based,cold
+"CPU-only inference on a Celeron N5095 SBC: 6 models from 0.6B to 8B, benchmarked
+I wanted to know how cheap you can go and still run local models, so I ran Ollama CPU-only on a Youyeetoo X1S. It's a single-board x86 machine with a Celeron N5095 (Jasper Lake, 4C/4T, 15W), 16GB of RAM, and a 128GB NVMe, running Kali 2025.4. Base configs of this board go for about $100 to $130 on AliExpress depending on RAM and storage.
+
+
+Short version of the results:
+
+- Qwen3 0.6B averaged 6.788 tok/s. Actually usable interactively.
+- The 8B fit in 16GB and ran, but averaged 0.924 tok/s. Not very usable for anything real.
+- Four models in between, and the full table is in the repo I linked below.
+- 15 minute all-core stress during testing: 74.66C average, 77C peak, no throttling on the stock heatsink and fan.
+
+Some notes:
+
+- Ollama saw the Jasper Lake iGPU but picked the CPU backend on its own, so everything here is CPU-only on purpose.
+- Small models on sub-15W x86 are more viable than I expected. At around 7 tok/s a 0.6B is fine for classification, routing, summarization, the kind of background jobs you'd otherwise send to an API.
+- The 8B wall is memory bandwidth, not capacity. It loads and runs but you just wait forever.
+
+Next I'm testing llama.cpp with Vulkan on the Jasper Lake iGPU. Someone over on r/SBCs told me Vulkan inference works on the N100 iGPU, so a CPU vs Vulkan comparison on this chip is coming and I'll post it here.
+
+Scripts, raw logs, full results table: https://github.com/TrevTron/youyeetoo-x1s-kali
+Write-up: https://www.unland.dev/blog/budget-cyberdeck-youyeetoo-x1s-kali
+
+If anyone has N100 or N150 numbers to compare against, I'd like to see them. And if you've gotten usable tok/s out of a Jasper Lake or Alder Lake-N iGPU over Vulkan, I'd love to know too.
+
+(Disclosure: the board was supplied by Youyeetoo. Testing and conclusions are my own.)",evidence_based,prelabeled
+"Any more t/s maxxing I could do? 4060 TI 16GB, 32GB system RAM
+Probably (definitely) breaking rule 3, but I've nowhere else to go because gemini is not giving me anything useful for this sorta thing. I literally cannot find any useful advice for this setup on this sub.
+
+I'm running Qwen 3.8 27B (IQ3\_S Unsloth) as a coding agent w/ Pi, getting \~6-7 t/s on reasoning (the bulk of time spent) and \~11/s for code generation. It really only takes like 1-1 1/2 hours to complete most tasks, but I feel like it could be better. I know the majority of that is from `nkvo` but I do think the large context is more important. I'm just wondering if there's anything I'm missing. It really feels like there is.
+
+    llama serve \
+    	-m ~/LLM/models/Qwen3.8-27B/Qwen3.8-27B-UD-IQ3_S.gguf \
+    	-md ~/LLM/models/Qwen3.8-27B/Qwen3.8-27B-DFlash2-Q4_K_M.gguf \
+            -ngl 999 \
+            -ngld 999 \
+    	-b 2048 \
+    	-ub 512 \
+    	-nkvo \
+            -c 128000 \
+            -fa on \
+            -ctk q8_0 \
+            -ctv q8_0 \
+            --spec-type draft-dflash \
+            --spec-draft-n-max 3 \
+            --port 8080",question,prelabeled
+"SPARK 2.6 4b and 1.7b Fixed a reasoning loop by editing one row of weights.
+Today I put my first two models up on Hugging Face I used Qwen4 to do direct weight editing to fix reasoning looping by up to 97% reduction on 1.7b and a bit less on the full 4b. 
+
+The problem: the ""but wait…"" spiral.
+
+Spark-X2.6 has a nasty failure mode where it reaches the correct answer… and then refuses to commit. It spirals into re-decision — ""but wait, should I…"", re-deriving the same conclusion in fresh wording, re-enumerating its tools, never acting or stopping. It's a semantic loop, so normal repetition metrics barely see it. In an agent setting it's fatal: the model knows the answer and just won't pull the trigger.The fix: surgery, not training.
+
+Instead of fine-tuning or messing with sampling, the fix is a no-training surgical weight edit — literally one row of the output head
+
+4B: 2,560 weights changed ≈ 6×10⁻⁷ of the model.
+
+1.7B: 2,048 weights (it has an untied head, so the input embeddings are untouched).
+
+The diagnosis came from directly watching activations at the exact moment the model reaches a conclusion but before it spirals: closure (</think>) was essentially absent (rank \~54, P≈7×10⁻⁶) while restart vocabulary dominated. Because the head reads out as logit(t) = emb\[t\] · h, that closure deficit is a head-readout gap. So we solved for the minimum-norm row delta that raises P(close) by \~14 nats at the conclusion states — dequantize that one row, add the delta, requantize, splice it back. Every other byte is bit-identical. The edit is conclusion-selective: it doesn't truncate legitimate reasoning.Results.Loop rate (controlled branch-point benchmark, 12 seeds/prompt)
+
+
+
+ModelBeforeAfterReduction4B0.7500.31258.4%1.7B0.8750.06292.9%And it doesn't cost general capability — same suites, before vs after
+
+
+
+Suite4B Δ1.7B ΔARC-Challenge−0.040+0.020WinoGrande+0.030+0.020PIQA−0.010+0.010HellaSwag0.0000.000MMLU+0.0220.000GSM8K−0.017+0.233Mean−0.002+0.047The 4B is basically neutral overall; the 1.7B actually gets smarter — GSM8K math more than doubles (0.200 → 0.433). Fixing the loop didn't break the brain.Honest caveat: this fixes the thinking loop. Broader agent tool looping can still happen on some tasks — that's a separate beast I'm still characterizing.Links (GGUF, delta + offline reproduce script included):
+
+4B: Spark-X2.6-4B-heretic-noloop-headrow-GGUF · [huggingface.co 4b heretic Spark Model](https://huggingface.co/graydini/Spark-X2.6-4B-heretic-noloop-headrow-GGUF)
+
+1.7B: Spark-X2.6-1.7B-noloop-headrow-GGUF · [huggingface.co 1.7b 97% reduction + math increase.](https://huggingface.co/graydini/Spark-X2.6-1.7B-noloop-headrow-GGUF)
+
+Both cards include the exact delta and a CPU-only script that reproduces the checkpoint bit-for-bit from the upstream quant. Full credit to XHToken (base), the heretic finetune, and the upstream quantizers — this is a derivative that adds only the head-row edit. Credit where it's due: the diagnosis, the activation surgery, and the benchmark rig were done by Qwen4, who did the genuinely hard part — finding the causal lever in the weights instead of guessing at sampling knobs. I just pointed it at the problem and reviewed the work. ",evidence_based,prelabeled
+"Qwen-3.8-Flash-Next on 1x RTX 5090: TG=50 t/s, PP=2300 t/s - with FreeToken
+I was somewhat disappointed with the performance of Qwen 3.8 Flash Next on my single RTX 5090 using llama.cpp.
+
+One issue is that llama.cpp still has no Expert Caching implemented for MoE models. There are various PRs and discussions (see [here](https://github.com/ggml-org/llama.cpp/discussions/24528), for example), but nothing is merged yet.
+
+Then I stumbled upon [FreeToken](https://github.com/FlashML-org/FreeToken) which claims to ""unlock datacenter-class intelligence on the hardware you already own"".
+
+With that I am able to run 3.8 Flash Next with  
+**TG \~ 50 t/s (around 40-60 depending on how well the cache works),** pretty stable even over longer context.  
+**PP \~ 2300 t/s**
+
+which is actually useable, thanks to **expert caching**.   
+(Stats are from FreeToken logs)
+
+**Launched with:**
+
+          --model <model>
+          --served-model-name qwen3.8-flash-next
+          --moe-strategy auto
+          --moe-cache-auto
+          --max-running-requests 2
+          --expert-load parallel
+          --max-seq-len-override 229376
+          --kv-reserve-tokens 229376
+          --reasoning-parser qwen3
+          --tool-call-parser qwen3_coder
+
+**Specs:**  
+RTX 5090, 128 GB DDR5 6000 (96 GB should work fine as well), Intel 270K Plus  
+Model used: [nvidia/Qwen3.8-Flash-Next-NVFP4](https://huggingface.co/nvidia/Qwen3.8-Flash-Next-NVFP4) (one of the suggestions from [here](https://github.com/FlashML-org/FreeToken/blob/main/docs/models.md) \- Be sure to convert it to FreeToken format otherwise each start is slow)
+
+**It works with other MoE models as well.** So even if you can only run something like Qwen 3.6 35B-A3B and have some spare VRAM which can be used to cache experts, give it a try.
+
+Still an early project - vision just got implemented. There is not KV quantization yet, nor MTP.
+
+  
+",evidence_based,prelabeled
+"Copium Prediction: Google and other major labs will drop new local models over the next few days so they can lead on benchmarks until Qwen 4 sweeps them next week.
+We saw this earlier when Gemma 4 dropped just a few days before a previous Qwen release. I feel like a few other labs did the same. Everybody wants that moment in the spotlight where they can lead the benchmarks for at least a day or two before the next Qwen comes in and mops the floor with them. I predict a new Gemma or maybe a Muse Glimmer update very soon before the Qwen 4 release. 
+
+All these labs want to be like the David Bowie song “We could be heroes, just for one day.”",unsupported_claim,prelabeled
+"Microsoft files a patent application to train AI models on idle consumer GPUs
+According to Microsoft's patent application, it explains breaking down training into small tasks and sending them to devices of owners who opted in. Credits will be the reward. it's just an app and no pay out rate is advertized so I don't even know if the credits would be enough for the electricity.
+
+
+
+Anyway, home internet latency feels like the bigger problem to me.
+
+
+
+[https://insider-gaming.com/microsoft-ai-use-your-gpu/](https://insider-gaming.com/microsoft-ai-use-your-gpu/)
+
+
+
+(English is not my native language, I used an LLM to help translate this post.)",unsupported_claim,prelabeled
+"Qwen3.8-Flash-Next vs Opus 5.5: Six-way benchmark on a real Rust feature with Claude Code and Pi
+**Reposting again since original post got removed by Reddit for some reason (I have no idea why)**
+
+A few of you pointed out in my \[last post\](https://www.reddit.com/r/LocalLLaMA/comments/1wyzt1d/story\_time\_qwen38flashnext\_on\_my\_strix\_halo/) that comparing Flash-Next and Opus with different harnesses and effort levels wasn't fair. So here is a more controlled comparison.
+
+
+
+Same task for every run: a real feature from the \[LlamaStash\](https://github.com/llamastash/llamastash) roadmap (save llama-server's KV cache before an unload and restore it when the model comes back). Six combinations, each run twice, so 12 PRs. Flash-Next ran locally on my Strix Halo laptop (Flow Z13) via Halogen (\~Q4 quant). Opus 5.5, Flash-Next, and Kimi K3 scored every PR on seven review questions plus CI.
+
+
+
+| Combination                      | Score (of 8) |     Time | API cost | Tokens (in / cached / out) |
+
+| -------------------------------- | -----------: | -------: | -------: | -------------------------- |
+
+| Claude Code + Opus 5.5, xhigh    |   6.94 (87%) | 43.5 min |   $17.78 | 507k / 48.3M / 203k        |
+
+| Claude Code + Opus 5.5, medium   |   6.25 (78%) | 23.4 min |    $6.52 | 242k / 13.4M / 95k         |
+
+| Claude Code + Flash-Next, medium |    5.5 (69%) | 45.3 min |    $0.32 | 445k / 13.5M / 82k         |
+
+| Pi + Flash-Next, xhigh           |   5.44 (68%) | 63.8 min |    $0.67 | 316k / 35.0M / 134k        |
+
+| Claude Code + Flash-Next, xhigh  |   5.38 (67%) | 49.5 min |    $0.39 | 269k / 18.9M / 99k         |
+
+| Pi + Flash-Next, medium          |   5.06 (63%) | 48.1 min |    $0.56 | 242k / 29.1M / 117k        |
+
+
+
+Scores are the average of both runs. Time, cost and tokens are from the second run, where the 100k-token benchmark numbers were given in the prompt. Flash-Next cost is at the QwenCloud price for Qwen3.8-Flash; I ran it locally, so it cost me only electricity.
+
+
+
+TL;DR
+
+
+
+\- All 12 runs finished and all 12 PRs pass the end-to-end test.
+
+\- Opus wrote better code, 82% on average against 68% for Claude Code + Flash-Next and 66% for Pi + Flash-Next. The difference is in edge cases, tests and docs. The core feature works fine. The gap between Opus and Qwen is not that wide.
+
+\- Flash-Next took 1.1x to 2.1x as long as Opus at the same effort.
+
+\- With Flash-Next, Claude Code and Pi scored the same on the review questions. CI passed on 4 of 4 Claude Code PRs and 1 of 4 Pi PRs.
+
+\- xhigh helped Opus a bit at 2.7x the cost. For Flash-Next, medium and xhigh scored about the same, and medium was faster in all 4 pairs.
+
+
+
+Opus is still ahead, but Flash-Next was right behind, on my laptop, for the cost of electricity.
+
+
+
+Also note that the models are not on the same league. Opus is a frontier model run at FP16 or atleast FP8. I ran Flash-Next on my laptop at \[4.16 bpw\](https://github.com/peonist-ai/halogen-flash-server/blob/main/docs/QUANT.md). Flash-Next at FP8 should show a bit more quality.
+
+
+
+The machine running Flash-Next ran at 70W TDP ceiling for the entire duration. I could have run it at 90W for slightly better speed but the fan noise and thermal stress was not worth it.
+
+
+
+Full write-up with the detailed methodology and the per-run results and what each model missed: [https://deepu.tech/qwen3.8-flash-next-vs-claude-opus-showdown](https://deepu.tech/qwen3.8-flash-next-vs-claude-opus-showdown)
+
+
+
+All 12 PRs are public if you want to read the code: [https://github.com/deepu105/llamastash-b4r2/pulls](https://github.com/deepu105/llamastash-b4r2/pulls)",evidence_based,prelabeled
+"I built a local GPU benchmark server for 4B to 35B models because I was tired of synthetic cloud leaderboards and tiny sample tests
+Hi everyone, whenever I looked at existing LLM leaderboards I was missing practical numbers for running quantized open weight models on affordable local hardware. Most tables only copy vendor cloud scores or run tiny subsets of a benchmark, and none of them tell you how long a model actually sits there calculating before it finishes. Because nothing like that existed, I set up a dedicated Linux test server with two RTX 5060 Ti cards giving 32 GB of VRAM in total, running vLLM in Docker. Over the past weeks I ran 12 current local models from 4B up to 35B through complete benchmark datasets without any subsampling, including IFEval, IFBench, ARC AGI 1, SimpleQA, SimpleQA Verified, SciCode and vLLM bench serve. The lineup includes Qwen 3.5, Qwen 3.6 and Qwen 3.8 in 4B, 9B, 27B and 35B A3B, Google Gemma 4 in E4B, 26B A4B and 31B, plus GLM 4.7 Flash in 4 bit quantizations like NVFP4 and AWQ.
+
+Every single model is tested twice across all benchmarks, once with thinking turned off and once with thinking turned on, using the official sampling parameters. While the tests run, my system tracks the exact wall clock duration and throughput in tokens per second to calculate a time efficiency score from 0 to 100 for every single cell. That turned out to be the most interesting part of the whole project. You can immediately see which models deliver strong scores in 20 or 30 minutes and which ones burn GPU power for 10 hours straight because they get stuck reasoning in circles on simple questions. Especially the MoE models like Qwen 3.6 35B A3B and Gemma 4 26B A4B surprised me by finishing in a fraction of the time while beating or matching the dense 27B and 31B models.
+
+I put all results into a clean, sortable comparison table on a new subpage of my site at [https://llmbenchmarks.io/local-gpu-benchmarks/](https://llmbenchmarks.io/local-gpu-benchmarks/) so anyone with a 16 GB or 32 GB setup can check the numbers before downloading 20 GB of weights. The site is a personal project with no ads, no tracking and no affiliate links, and new benchmarks like Chess Puzzles are already running on the server right now. Feel free to take a look and let me know which local models you would like to see tested next.",question,prelabeled
+"What are your favorite unsaturated benchmarks?
+Because most people seem to learn about benchmarks from the new model releases, and the model creators would only showcase a benchmark if it makes them look good (e.g. openAI would not include the $10,000 it spent on ARC AGI 3 to get a 0.4% score with gpt-5.5), this seems to create a bias towards saturated benchmarks
+
+What are the benchmarks that you like/track and that aren't saturated or contaminated?",question,prelabeled
+"New to the scene. Yesterday, got 4 t/s on R1 671b q4. Today, I'm getting about 0.15 t/s... What did I break lol
+5975wx, 512gb DDR4 3200, dual 3090s.
+Ollama + OpenWebUI. Running on LMDE.
+
+Idk what went wrong now but I'm struggling to get it back to 4 t/s... I can work with 4 t/s, but 0.15 t/s is just terrible.
+
+Any ideas? Happy to provide information upon request.
+
+Total noob here, just built this a few days ago and very little terminal experience lol but have an open mind and a will to learn.",question,prelabeled
+"Have 8 GB of VRAM and 32 GB of RAM? You can run Qwen 3.8 Flash Next at up to 900 t/s PP and 30 t/s TG!
+First, this isn’t clickbait - these are real results. I managed to run Qwen 3.8 Flash Next Q2 and got better results in benchmarks and real-world tests than I did with any Qwen 3.6 35B A3B fine-tune or Qwen 3.8 27B model I tested. It is also faster than my current Qwen 3.6 35B A3B setup. Here are the details.
+
+About a week ago, I learned about Strata and what it can do from this subreddit. Its ability to distribute workloads across VRAM, RAM, and SSD storage, run a 125B-parameter model, and deliver incredible prompt-processing and token-generation speeds sounded almost too good to be true - but only if you had 12 GB of VRAM. At first, I thought I probably wouldn’t be able to achieve similar results on my machine, but I decided to try it myself. The results surprised me, so I wanted to share them with you and provide some guidance for getting the model running on your own hardware.
+
+First, here are my system specs:
+
+* **GPU:** RTX 5060 Laptop, 8 GB VRAM
+* **CPU:** AMD Ryzen 9 8945HX, up to 5.4 GHz, 16 cores / 32 threads
+* **RAM:** 32 GB (16 + 16 GB) DDR5-5200
+* **SSD:** 1 TB, 5,200 MiB/s read, 4,200 MiB/s write
+* **PCIe:** Gen 4 x8
+* **OS:** Linux
+
+You can find my Strata configurations here: [Chat](https://pastebin.com/n3Z7CDPV) | [Agentic](https://pastebin.com/LQt1JtEq). Remember to update the paths to your model and expert files. Use the `Chat` configuration for a single session with the model, such as a regular chat. Use `Agentic` when working with multiple sessions and delegation, for example in agent-based systems. I’ll explain the difference in more detail below.
+
+# Key parameters to tune
+
+* `--mmap-experts` \- places the experts that do not fit in memory on the SSD.
+* `--kv-resident 20480` \- distributes the KV cache between VRAM and RAM. A lower value leaves more VRAM available. `20480` is the minimum value.
+* `--vram-reserve-mib 500` \- leaves some VRAM available for other tasks. In my setup, `500` is the lowest workable value, but I recommend using `900`.
+* `--pcie-frac 0.35` \- controls the fraction of per-layer VRAM misses that the GPU reads over PCIe. You can tune this parameter using the calibration command: `./setup.sh --calibrate`. I found a value that works best for my setup. You can also calibrate it yourself if you are not satisfied with your prompt-processing speed.
+* `STRATA_RESIDENT_HEADROOM_GIB=4` \- reserves RAM, in GiB, for other tasks. Set this higher if you are using Windows.
+
+The biggest performance gains in my setup came from adjusting `--vram-reserve-mib` and `STRATA_RESIDENT_HEADROOM_GIB`.
+
+I used the [Gyro S model](https://huggingface.co/agentionai/Qwen3.8-Flash-Next-Gyro-GGUF/blob/main/Qwen3.8-Flash-Next-Gyro-S-TQ1_0.gguf) because I consider it the best quant for my hardware, and it delivered the strongest results among the models I tested. I had previously tried GSQ-RCO Coder, GSQ-RCO IQ2\_XS, and other quants, but they either got stuck in repetitive loops or struggled with languages other than English. Gyro S offers a good balance between quality and speed.
+
+I’m not using MTP. It can improve TG, but it also consumes VRAM and reduces PP, which is likely to be a worse trade-off for this setup. You can enable it if you have 10 GB of VRAM or more.
+
+I run Vision on the CPU. Image processing takes around 1-2 seconds per image, but this saves a substantial amount of VRAM. Strata runs Vision in a separate process, so it can be moved to swap. This does not significantly affect model performance, while freeing up more RAM.
+
+If you use local models for parallel agent calls, there is one important limitation: with a context size of 131K tokens or more, you cannot safely use `--parallel` because it consumes a large amount of both VRAM and RAM. This can cause a severe drop in speed or an out-of-memory (OOM) error. A safer alternative is `--conversation-cache`. It keeps a limited number of sessions parked so they can be resumed sequentially. This does not provide true parallelism, but it avoids having to re-read long contexts when switching between sessions. Here are the relevant parameters:
+
+* `--conversation-cache-mib 4096` \- the size of the parked-session cache. A larger value reduces the chance that a session’s cache will be evicted and its context will need to be read again.
+* `--conversation-cache-slots 2` \- the number of parked-session slots. Two slots allow two sessions to be stored at once.
+* `--conversation-cache-min-tokens 8000` \- do not cache a session if its token count is at or below this threshold. The right value depends on your PP speed and how long you are willing to wait for that many tokens to be processed.
+* `--conversation-cache-min-free-mib 1024` \- the minimum amount of free RAM to preserve while caching. If caching a new entry would leave around 1,024 MiB of free RAM, the old cache will be cleared to reduce the risk of OOM.
+
+>Be careful when tuning these parameters yourself: incorrect settings can affect system stability or push the model into heavy swapping. Do not exceed the total memory available on your system.
+
+All tests were run on Linux, which gives me more flexibility with RAM allocation. If you use Windows, try allocating less memory to the model. This will reduce throughput significantly, but it also lowers the risk of running out of memory. On Linux, I created a dedicated 32 GB swap partition for other applications. I also pinned the server process in memory so it could not be swapped out, using a systemd service with this setting:
+
+    [Service]
+    MemorySwapMax=0
+
+This helps ensure that the server’s memory does not get swapped out, preserving consistent read and write performance even with a large context and parked-session cache.
+
+With the `Chat` configuration, I get:
+
+* **262K context:** PP 800-970 t/s and TG 30-40 t/s
+* **131K context:** PP 930-1,040 t/s and TG 30-45 t/s
+
+With the `Agentic` configuration, I get:
+
+* **262K context:** PP 520-740 t/s and TG 30-40 t/s
+* **131K context:** PP 670-890 t/s and TG 30-45 t/s
+
+In my view, these are excellent results-even compared with Qwen 3.6 35B A3B running in llama.cpp. With Qwen 3.6 35B A3B, using a VRAM-constrained expert layout and MTP/Vision disabled, I get PP 630-680 t/s and TG 27-35 t/s. Do you think Qwen 3.6 35B A3B is still worth using for agentic tasks today?
+
+Strata does not affect response quality; it helps distribute the model across available resources and keeps frequently used experts resident. That is only one of its major optimizations, alongside several others. The model’s quantization is what affects output quality. If you have more than 8 GB of VRAM, you could try Gyro M/L or other quants.
+
+Use my configurations as starting points and adapt them to your hardware and workload. Your component combination and use case may be different from mine.
+
+# Real-world quality tests
+
+Now that I’ve covered how to fit the model onto this hardware, let’s look at the quality of its outputs. I’ve included several representative tests. I did not run an extensive benchmark suite or standardized evaluations; instead, I spent the past week testing the model on practical, everyday, and demanding tasks. I’ll leave broader benchmark testing to the community.
+
+I’ll compare it with my current high-performing setup, **Cyber-Tiel 35B A3B**, based on Ornith 1.5 Heretic. Tiel 35B A3B often gave me repetitive, looping responses, so I switched to Cyber-Tiel. The Flint model was released recently, but I won’t include it in this comparison. It falls behind Qwen 3.6 in my view; I may compare the two later and add those tests to this post.
+
+**Test 1: Pagoda**
+
+This test was run in Pi Agent with a minimal set of tools: LSP and Playwright MCP. For Qwen Flash Next Gyro S, I set `reasoning_effort` to `high`.
+
+![video](vycdc57ifsxh1)
+
+**Test 2: Flappy Bird clone**
+
+The conditions were identical to those in the previous test.
+
+![video](97i98026fsxh1)
+
+**Test 3: Pelican**
+
+For this test, I compared not only two different models but also different `reasoning_effort` settings for Qwen Flash Next Gyro S. The agent environment was the same: Pi Agent.
+
+![img](ifhdl3y7fsxh1)
+
+I ran many more tests, but I cannot share them for confidentiality reasons. What I can say is that I’ve replaced all my coding agents with this model. That change has accelerated my development and improved code quality by a factor of five.
+
+As you can see from these examples, the results are better than those of any other model I’ve tested that fits within 8 GB of VRAM. Qwen 3.8 Flash Next is impressive, and the Gyro S quant makes it possible to run the model even on hardware like mine for local coding and agentic tasks. My goal with this post is to show people who still use Qwen 3.6 35B A3B or its fine-tunes locally that there is now a model that, in my experience, outperforms them by a wide margin. I hope the examples make that case.
+
+I’m always open to a different perspective, so feel free to share criticism in the comments. If you have suggestions or improvements for the configuration, please share them as well-other users may benefit from them too.
+
+That’s all from me. Use good tools, and happy coding!",evidence_based,prelabeled
+"DeepSeek-V4-Flash-0731 UD-Q8_K_XL 17.20~ t/s on A6000 + 256GB DDR4
+Hello everyone I want to join the hype of posting specs.
+
+CPU: AMD EPYC 74F3 24-Core
+
+RAM: 8 Channel 3200 DDR4
+
+GPU: RTX A6000 48GB
+
+Prompt processing is in the high 70t/s (got down to mid 30t/s at 300k context). Inference is a steady 17.20t/s\~ and the 48GB VRAM is enough to have the full 1mil context but PP will be so bad. Sadly not as cool like those M5 Macs. 
+
+Anyone else having similar specs?",evidence_based,prelabeled
+"Yet another reason to self host: Anthropic has (again) cut back on reverse engineering tools
+[https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropic-confirms-new-claude-code-limits-to-prevent-game-cloning-users-report-opus-5-5-is-also-actively-blocking-reverse-engineering-tasks](https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropic-confirms-new-claude-code-limits-to-prevent-game-cloning-users-report-opus-5-5-is-also-actively-blocking-reverse-engineering-tasks)
+
+Besides privacy and being in control of your data.  
+Besides being able to control the quality of the inference compute.  
+Besides being able to discuss things with the model and not have the cops called on you.  
+Besides being able to run the models you want for as long as you want.  
+Besides being able to run your own suite of security and network penetration tools.  
+Besides not being as the mercy of the frontier companies for pricing.
+
+We now have another reason for local LLMs: Our betters have decided that they don't like people cloning games. 
+
+And before the Reddit Neckbeard brigade starts in with their bullshit, no I'm not advocating for people should to committ wholesale piracy using AI tools.  But these blanket frontier AI policies inevitably ensnare peripheral behavior that is otherwise illegal but that the frontier company doesn't want to deal with.
+
+William Blackstone wrote that ""it is better that ten guilty persons escape than that one innocent suffer"".  If having open unhindered local LLMs means there are a few individuals that use it for nefarious purposes like modifying or pirating software,  I'm good with that trade off.  Die mad about it.",unsupported_claim,prelabeled
+"The 4B class of 2026 (benchmark)
+Bench 2 from my 18GB M3 Pro. Last week was specialists 
+vs generalists at 7-8B (which I hosed by giving thinking models a 
+128-token budget, so half the post was an apology). This week: the 
+4B class of 2026, every model released or actively-current at the 
+3-4B size, head-to-head on the same task suite.
+
+Lineup (sizes on disk):
+  gemma4:e4b              9.6 GB    Google, Apr 2 2026
+  qwen3.5:4b              3.4 GB    Alibaba, Mar 1 2026
+  granite4:3b             2.1 GB    IBM, Oct 2025
+  nemotron-3-nano:4b      2.8 GB    NVIDIA, Mar 2026
+  phi4-mini:3.8b          2.5 GB    Microsoft, late 2024
+
+39 tasks: 15 finance (P/E, NPV, CAGR, Sharpe), 15 reasoning (word 
+problems, syllogisms, probability), 9 code (FizzBuzz-tier). 3 trials 
+per (model × task), median aggregation. temp=0, seed=42, 
+max_tokens=1024.
+
+## Headline: Nemotron 3 Nano won and it's not close
+
+  model                  overall    finance    reasoning    code
+  nemotron-3-nano:4b     85%        100%       80%          67%
+  phi4-mini:3.8b         77%        80%        60%          100%
+  gemma4:e4b             62%        60%        60%          67%
+  granite4:3b            54%        60%        20%          100%
+  qwen3.5:4b             15%        20%        20%          0%
+
+NVIDIA's nano is barely a month old and went 15-for-15 on finance. 
+Looking at the responses (visible in the gist), it's a thinking model, `</think>` tags before final answers, and it actually finishes its 
+thinking inside the 1024-token budget. The reasoning is clean: 
+""compute (1.08)^5. 1.08^2=1.1664, ^3=1.259712, ^4=1.36048896, 
+^5=1.4693280768. So PV = 100,000 / 1.4693280768 = approx 68,058.""
+
+That's a 2.8 GB model on disk producing the right answer with the 
+right intermediate work. On finance specifically, it beat every 
+larger model.
+
+## Lab personalities are real at this size
+
+Look at the per-category lines for granite4:3b vs nemotron-3-nano:4b:
+
+  granite:    code 100%, reasoning 20%
+  nemotron:   code 67%,  reasoning 80%
+
+Two ~3-4 GB models, almost-mirror-image profiles. Granite is a 
+dedicated coder with weak reasoning. Nemotron is a dedicated reasoner 
+with mediocre code. Both come from labs (IBM, NVIDIA) that don't 
+position these as specialist models, they're marketed as 
+general-purpose at this size. The marketing is wrong; the data shows 
+clear specialization.
+
+phi4-mini sits in between: 100% on code, 80% on finance, 60% on 
+reasoning. The most balanced of the bunch and the bang-for-GB winner 
+at 30.8 accuracy-pct per GB on disk.
+
+## The Qwen 3.5 4b problem
+
+15% accuracy. 30 of 39 responses empty (avg response length: 21 chars 
+out of a 1024-token budget). Same failure mode as Qwen3:4b in bench 1 
+four months ago. Thinking model that can't finish thinking inside a 
+fixed budget that's reasonable for non-thinking models in the same 
+weight class.
+
+Looking at one of the truncated responses: it gets to ""$$PV = 
+\frac{100,000}{(1 + 0.08)^5}$$"" and runs out of budget mid-formula. 
+The model isn't broken; my budget gave thinking models 1024 tokens 
+when they need 4096+ to finish. Granite finishes in ~75 tokens 
+average, Nemotron in ~170, Qwen 3.5 4b is using its full 914 tokens 
+on visible-plus-hidden output and still not finishing.
+
+This is now a pattern across two bench posts. The eval ecosystem 
+has a thinking-model-in-fixed-budget problem and I don't think the 
+answer is ""make the budget bigger"", that punishes the non-thinkers 
+with bloated runs and obscures what's actually being measured.
+
+I'm going to try per-model token budgets in bench 3. Open to better 
+ideas, comment if you have them.
+
+## Methodology + repo
+
+Apple M3 Pro, 18 GB, macOS 25.5, Ollama 0.21. temp=0, seed=42, 
+max_tokens=1024 across all models (this is the design flaw above).
+3 trials per task, median aggregation. All graders are deterministic 
+regex/numeric/exec, no LLM-as-judge.
+
+Repo: https://github.com/joshuahickscorp/bench2
+Raw JSONL with full responses + per-token timings: 
+https://gist.github.com/joshuahickscorp/1e8947e2f14dea0930f6f33d987c335e
+
+## Up next
+
+Bench 3: lab personalities deep-dive. Should land in 3 days.",evidence_based,prelabeled
+"ALoDLM 8b looped diffusion language model: ~3x inference speed vs its base model qwen3-8b with better benchmark results
+Diffusion language models are the future!",unsupported_claim,prelabeled
+"Cannot get SparkAudio/Spark-TTS-0.5B running.
+I am trying to get this thing running but keep getting errors. Most have just been things I need to pip install or update but now I'm running into an error about tokenizer variable doesn't exist or hasn't been initialized or something. I'm not at my computer at the moment but has anyone been able to get this one up and running ? How does it do with cloning voices? Does it sound as natural as the demos?",question,prelabeled
+"Since GPU Prices have changed and I got my old Pc fixed, I wanna ask what I should do for what’ll mostly likely be my only upgrades for a few years, any advice?
+So, I have two PCs available to me, and I intend to connect them for compute: 
+
+1. Ultra 7 265KF + 5070ti + 32GB DDR5-6000 CL30 (KLEVV Urbane V) on a Z890 MAX GAMING WIFI7 + 1000w 80+ G Apevia PR1000w PSU (Will likely get replaced by a SAMA P1200w PSU)
+
+2. i9-14900F + 4070S + 32GB DDR5-5200 CL40 (Apacer Panther, not on sale) on a PRO B760-VC WIFI IV + 750w 80+ G PSU (likely a shoddy PSU but seems to be attached to the case, it’s hidden and so I can’t figure out what it is. Probably an EVGA, but unlikely to be replaceable - or at least easily so.)
+
+Initially I was looking to just replace the 4070 Super in PC2 with a B70 or R9700 and calling it a day, when they were $1200 and $1600, respectively. Then when they shot up a B65 $1200, which then shot up. Then add a second 5070ti to PC1 for $900-1000, which then shot up.     
+Now, my plan is to potentially settle for a 5060ti 16gb in PC1 to take advantage of NVFP4, but even that’s pricier, and with the AI bubble talk I’m not super confident in value of doing so. I’d likely also need to use a PCIe-riser just to the 5070ti (Windforce) has airflow due to how close they’d be in the case.
+
+Otherwise, I’m considering sticking with the VRAM I have, and instead pivoting to ram. I can go from 1R 2C to 2R 2C in both PCs, grabbing another 2x16gb of Apacer Panther from EBay for around $400 for PC2 - though obv riskier - then getting a 2x24gb kit of Urbane V at the same timings of the original 2x16gb 6000-CL30 kit for PC1 for $650 off Amazon. Giving me +80gb of DDR5 to the 64gb I have between both PCs and the 28gb of VRAM I already have.
+
+Current plan is/was the 5060ti 16gb + 2x24gb kit for PC1 and calling it there. 
+
+Any advice, pointers, or suggestions? I believe the RAM sitch should work since it’s same timings and type/manufacture/brand, and know I’ll probably have to lower speed a bit for stability, but am not the most experienced PC guy on earth by any means.    
+ ",question,prelabeled
+"BigMoeOnEdge outperforms Strata and colibri on 8-16 GB cards and Mac and you can run any model
+Hi!
+
+for those who might not know the solution:
+
+\- it takes any MoE GGUF llama.cpp can load, whatever the quant. No repacking, no special format
+
+\- it runs on whatever you have: NVIDIA, AMD, Intel, Mac, a phone, or just the CPU
+
+\- Windows, Linux, macOS, Android, iOS
+
+\- output is the same as llama.cpp, don't cut corners on quality
+
+\- you start it with \`--auto\` and it works out the settings for your machine
+
+Below is a brief overview of the benchmark:
+
+\- 8 GB card, Qwen3.6-35B: I get about 35 tok/s. colibri around 23. Strata wouldn't start at 16k context
+
+\- 12 GB card, same model: about 45 for bmoe, about 30 for Strata
+
+\- long prompt on the 8 GB card: bmoe 5 s to the first token. Strata 14 s, colibri close to 2 minutes
+
+\- Basalt needs an RTX 50, so I couldn't run it on these
+
+16 GB MacBook, Qwen3.6-35B: about 20 tok/s for bmoe, colibri's release 3.5
+
+\- same Mac, Qwen3.8-Flash-Next 125B: 10 tok/s, Strata about 7
+
+On the cards Strata is tuned for it's still ahead but only by a little.
+
+On two 5060 Ti with Qwen3.8-Flash-Next it was 1.3x faster than bmoe. They write kernels for a handful of models, bmoe does not.
+
+Repo, with the logs: https://github.com/Helldez/BigMoeOnEdge
+
+If you have an 8 to 32 GB card I'd like to see what you get.
+
+Benchmark: https://github.com/Helldez/BigMoeOnEdge/tree/main/docs/bench-data",evidence_based,cold
+"I think local AI cost me a job
+Got headhunted by a VC-backed AI-focused company, ended up skipping past two levels of their application/interview process because of that. Got 15 minute call with the co-founder, hit it off well, but it all seemed to go sour when he asked about my AI setup and I told him I run qwen locally.
+
+Followed up with a question about whether I use frontier AI, but it was essentially over at that point.
+
+Discriminating over AI choice is fucked man.
+
+----
+
+Now, of course, this was a 15 minute call that lasted exactly 15 minutes, and literally anything could've been the trigger. The whole thing felt like ""move fast break things"", and so it felt like if I didn't pass the vibe-check 100% I was gone.
+
+Just wanted to provide one iota of anecdata and spark some discussion.",unsupported_claim,prelabeled
+"[llama.cpp fork]: QFN + [specific quant] + [ultra specific hardware config] = [incredible and irreproducible pp and tg]
+Upvote, now!",unsupported_claim,prelabeled
+"We’re MOSS, the team behind MOSS-Image, MOSS-TTS, and more — Ask Us Anything!
+https://i.redd.it/88eb2wo0dmyh1.png
+
+Hi [r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/)!
+
+We’re **MOSS**, the team behind the MOSS family of models for speech, audio, images, and video. Some of you may know us through MOSS-TTS, or have come across our recent MOSS-Image release.
+
+Today, we took the “anything” in “Ask Us Anything” pretty literally. **Speech, sound, music, images, video—we brought the whole MOSS model family!**
+
+We’re based in Shanghai, with roots in the OpenMOSS research team at Fudan University and the Shanghai Innovation Institute. You can explore our models, research, and tools on [our website](https://www.mosi.cn/en).
+
+Our broader research goal is to build AI that can follow what’s happening around it: what people are saying, what they’re seeing, and how the situation changes over time. That takes us across speech generation, audio and visual understanding, and synchronized audio-video generation. 
+
+# 🎨 MOSS-Image
+
+[**MOSS-Image**](https://github.com/OpenMOSS/MOSS-Image) is our text-to-image model with a **5B DiT backbone**, Chinese and English text rendering, and JSON layout control. Base and SFT weights and the bundled inference code are available under **Apache 2.0**.
+
+MOSS-Image has remained among the top trending text-to-image models on Hugging Face. Its ComfyUI version has already recorded **3,702,490 downloads**.
+
+# 🎙️ Speech and sound generation
+
+\- [**MOSS-TTS**](https://huggingface.co/collections/OpenMOSS-Team/moss-tts) — Speech synthesis and voice cloning.
+
+\- [**MOSS-TTSD**](https://huggingface.co/OpenMOSS-Team/MOSS-TTSD-v1.0) — Multi-speaker conversations, long-form dialogue, and podcasts.
+
+\- [**MOSS-TTS-Realtime**](https://huggingface.co/OpenMOSS-Team/MOSS-TTS-Realtime) — Streaming speech generation for conversational applications.
+
+\- [**MOSS-TTS-Nano**](https://huggingface.co/OpenMOSS-Team/MOSS-TTS-Nano-100M) — Lightweight 100M-parameter speech generation with CPU-friendly streaming inference.
+
+\- [**MOSS-VoiceGenerator**](https://huggingface.co/OpenMOSS-Team/MOSS-VoiceGenerator) — Design voices from text descriptions, without reference audio.
+
+\- [**MOSS-SoundEffect**](https://huggingface.co/OpenMOSS-Team/MOSS-SoundEffect-v2.0) — Generate sound effects from text.
+
+# 🎧 Audio understanding
+
+\- [**MOSS-Transcribe-Diarize**](https://huggingface.co/OpenMOSS-Team/MOSS-Transcribe-Diarize) — Transcription with speaker labels and timestamps.
+
+\- [**MOSS-Audio**](https://huggingface.co/OpenMOSS-Team/MOSS-Audio-8B-Instruct) — Understanding and reasoning about speech, environmental sounds, and music.
+
+\- [**MOSS-Music**](https://huggingface.co/OpenMOSS-Team/MOSS-Music-8B-Instruct) — Music understanding, from lyrics and instrumentation to structure.
+
+# 🎬 Visual understanding and video generation
+
+\- [**MOSS-VL**](https://huggingface.co/collections/OpenMOSS-Team/moss-vl) — Image and video understanding, including long videos.
+
+\- [**MOSS-VL-Realtime**](https://huggingface.co/OpenMOSS-Team/MOSS-VL-Realtime) — Understand streaming video as it unfolds.
+
+\- [**MOVA**](https://huggingface.co/collections/OpenMOSS-Team/mova) — Generate video and audio together, in sync.
+
+# 🛠️ Other resources
+
+\- [**MOSS API & Playground**](https://platform.mosi.cn/)
+
+**-** [**Hugging Face**](https://huggingface.co/OpenMOSS-Team)
+
+**-** [**GitHub**](https://github.com/OpenMOSS)
+
+Joining the AMA:
+
+\- Gary — [u/garybryant](https://www.reddit.com/user/garybryant/)
+
+\- XiaoGui — [u/FarAdhesiveness9577](https://www.reddit.com/user/FarAdhesiveness9577/)
+
+\- Other MOSS team members — answering through the two shared accounts above.
+
+**We'll be answering questions on October 30, from 8–11 AM PT, and will continue checking the thread for 48 hours afterward.**
+
+**Ask us anything!**",evidence_based,prelabeled
+"Backup your quants!
+https://i.redd.it/oc575b7cwlxh1.png
+
+I'm sure the situation is the same for other quant producers.
+
+If you have anything you want to keep, it's best to make a backup now.
+
+If you have the means to, please create torrents and share them here:
+
+* [https://llama.garden](https://llama.garden)
+* [https://pirateface.co/models](https://pirateface.co/models)
+* [https://huggingbay.xyz/browse](https://huggingbay.xyz/browse)
+
+",unsupported_claim,prelabeled
+"~1,400 t/s prefill is real. 60 t/s decode is not. I graded 5 Strix Halo forks with Qwen3.8 Flash-Next
+Every fork thread here argues about decode t/s. Decode moves 2x on the prompt alone, and every GGUF fork I tested changes greedy output when the drafter is on. The real fork difference is prefill.
+
+Short answer first, receipts after.
+
+# What to run
+
+|You want|Run|Why|
+|:-|:-|:-|
+|Daily coding agent|[Nathan's strix-halo toolbox](https://github.com/Nathanw1014/strix-halo-llamacpp), Vulkan, v0.7.4.1|[Best agent-bench scores](https://www.reddit.com/r/LocalLLaMA/comments/1w6cjm5/neon_ladder_a_playtestgraded_benchmark_for_local/) of the GGUF builds (15-18/19), fast prefill, maintained. Turn the drafter off if you need exact reruns.|
+|Huge prompt, short answer|[halogen 0.5.3](https://github.com/peonist-ai/halogen-flash-server)|1,246 / 1,424 / 1,358 tok/s prefill at 8k / 32k / 131k in its changelog, against my stack's 539 / 433. About 3.5x in real agent traffic, about 1.3x on decode, and it passes the spec-identity gate. Closed source. Quality one notch under my stack on the same bench.|
+|Exact reruns|Any build with spec off, or halogen|Spec on changes temp-0 output on every GGUF build I tested. Serial reruns are deterministic.|
+|You own an R9700|sixvolts/llama-halo-hybrid|Most honest published numbers in the thread. Needs the second GPU on a riser.|
+
+One line version: Nathan for agents, halogen for long reads, spec off when exactness matters, and ask every fork author for a PPL number.
+
+# The neon-ladder scoreboard
+
+The ladder is playtest-graded, so a build only scores the contract checks it actually ships. Same contract, same box:
+
+|Stack|Static score (of 19)|Laser + obstacle pad|Serve speed|Daily driver?|
+|:-|:-|:-|:-|:-|
+|Nathan's toolbox (Flash-Next)|15-18 (medium band)|shipped|420 px/s|**Yes**|
+|halogen, four builds|14, 14, 15, 15|0/4 each|slow 4/4 (320 px/s)|**No, fast lane only**|
+
+Quality and flexibility point the same way. Nathan's has the better band, ships both contract features every run, and stays flexible: open GGUF weights, a drafter you can switch off when reruns must be exact, a CPU-expert knob for memory tuning, and it coexists with a desktop. halogen is closed, needs its own 126 GB format, and has no middle memory mode or JSON mode.
+
+The other four stacks in this post never got a ladder cell, so their rows below are speed-only. Contract and scorer: [neon-ladder](https://www.reddit.com/r/LocalLLaMA/comments/1w6cjm5/neon_ladder_a_playtestgraded_benchmark_for_local/).
+
+# The claims, graded
+
+The [OP's post](https://www.reddit.com/r/LocalLLaMA/comments/1wa9m61/for_strix_halo_official_llamacpp_isnt_ideal_and/) ranks three forks plus stock llama.cpp by t/s and a hardware-theory percentage, and a fourth fork joined in the comments. I built and ran three of them on my Flow Z13 (Ryzen AI Max+ 395, 128 GB, gfx1151), greedy, same model and flags as [my daily build](https://www.reddit.com/r/StrixHalo/comments/1w6cf5t/qwen38flashnext_on_strix_halo_40_ts_sustained/). strix-llama I did not run, because its tip (PR #34) accepts replayed draft tokens unverified and its only thread datapoint is on the 27B quant, so its row quotes the thread.
+
+|Stack|Claim|My box, t/s|Verdict|
+|:-|:-|:-|:-|
+|halogen|\~50 decode, 1200 prefill|33.2 serial, 43.1 drafted, prefill 1192 / 1350 / 1315 u/8k / 32k / 131k on 0.5.4 at 70 W|prefill reproduces, 50 is the drafted row|
+|myhacsint|almost 60 decode, 600 prefill|25.7 serial, 35.6 drafted, prefill 532 / 584 / 538 / 427 u/0.5k to 32k|does not reproduce, it is the toolbox at parity|
+|strix-llama|almost 30 decode, 800 prefill|not run; thread reports 14 serial, prefill 532 u/0 / 397 u/32k|the 800 is draft-skip prefill per u/SelfRefDev|
+|llama-halo-hybrid|45 to 60 decode, sustained 46|not my hardware, needs a riser GPU|holds on two other machines, byte-identical output where checked|
+|official llama.cpp|2x decode, 2xx prefill|vanilla not run; toolbox nearest, 26 serial, 34.3 drafted|that line is an untuned setup, not a ceiling|
+|Nathan's toolbox (my stack)|not in the thread, swept into the 2x line|26 serial, 34.3 drafted, prefill 539 / 433 u/8k / 32k|wins my agent bench at 15-18, still fails the identity gate|
+
+None of these are cheating numbers. Drafting is real speed, and a drafted row beats a serial row on the same silicon. The trap is mixing the two, and a drafted token stream has no fixed bandwidth ceiling to grade a percentage against.
+
+u/SelfRefDev ran all four stacks twice on an EVO-X2 and posted a correction, so the thread now has two independent boxes agreeing on the shape. My receipts add the direct myhacsint measurement they could not get: it runs here on my daily flags, and the 60 t/s claim got its matched-condition number.
+
+# The decode numbers are not comparable
+
+Same binary, same flags, same GGUF. A poem decodes at 26 t/s with 47.5% draft acceptance. Repetitive JSON hits 54 t/s at 93.7%.
+
+The prompt alone is the 2x.
+
+Where people say serial, the numbers cluster at 14-28 t/s. A commenter measured 14 t/s on halo-box, audioen reports about 20 t/s, sixvolts gets 27-28 t/s on stock llama.cpp. The 45 to 60 t/s figures are drafted rates, and halogen's own README lists 34.1 to 37.6 t/s for serial greedy, so the ""\~50 t/s"" quote is its drafting row.
+
+# The spec promise fails on every GGUF build I tested
+
+Speculative decoding promises the same output as the big model alone, just faster. At temperature 0 that should mean byte-identical reruns. I built a gate for it: same server, drafter on versus off, 5 to 10 prompts, thinking off.
+
+The gate fails everywhere. v0.6.11 fails 3 of 5 prompts, v0.7.4.1 fails 4 of 5, the adaptive branch fails 3 of 5. [Flash-Next](https://www.reddit.com/r/StrixHalo/comments/1w6cf5t/qwen38flashnext_on_strix_halo_40_ts_sustained/) with its MTP sidecar fails 9 of 10, and a second fork I compiled, myhacsint, fails 9 of 10 the same way.
+
+n-max 1 still fails 3 of 5, so it is not draft depth.
+
+The controls are clean. Serial reruns are byte-identical 10 for 10 on the same server, and 10 for 10 across a fresh restart. Raw /completion with no chat template differs too, so it is not the template layer.
+
+The flips are near-ties. One build wrote ""\*\*Most houseplants die from overwatering"".
+
+The other wrote ""Most houseplants die from \*\*overwatering"". Same sentence, the bold lands on a different word.
+
+The likely cause is batch shape. Loading the drafter changes the batches the GPU sees, Vulkan picks different kernels, the last decimal moves, and the coin flip lands the other way. That is the bug class halo-box names in PR #34 and then routes around by skipping re-verification after a checkpoint restore.
+
+I used to read that comment as a speed hack. Now I have the same bug in my own line, measured, and my daily driver ships it. The repro is two server starts and one curl.
+
+# The closed-source one has the best docs
+
+halogen puts the drafted row next to the serial one, 42.4 t/s on prose and 48.3 on code, and names the conditions. It reports 182 of 192 greedy steps identical to BF16 goldens, end to end including quant. Its prefill GEMM plan costs 0.0006 nats of paired perplexity across 32,767 positions, and it lists three byte-identity gates.
+
+The EULA permits benchmarking, so I ran the 0.4.4 build next to my stack, same box, same ten prompts, and it tracked their published row within 5%. The table uses their current 0.5.3 numbers.
+
+I pulled 0.5.4 and reran everything. On my board, at its 70 W power limit, prefill is now 1,192 / 1,350 / 1,315 t/s at 8k / 32k / 131k, so the changelog's 5 to 8 percent gain is real here, decode is unchanged at 33.2 serial and 43.1 drafted, and all ten battery answers came back byte-identical to the ones 0.4.4 gave. Four releases, same tokens.
+
+One /health line needs a warning. A commenter timed a no-speedup run and read `drafter_weights_loaded: false` as proof the MTP head never loads, but my 0.5.4 server reports false while the mtp drafter measurably drafts, 43.1 against 33.2 t/s on the same battery. Whatever that field tracks, it is not whether speculation works.
+
+||halogen 0.5.3 (ROCm)|my stack v0.7.4.1 (Vulkan)|
+|:-|:-|:-|
+|prefill @ 8k|1246 t/s|539 t/s|
+|prefill @ 32k|1424 t/s|433 t/s|
+|prefill @ 131k|1358 t/s|\-|
+|decode, serial|34.1-37.6 t/s|26.0 t/s|
+|decode, drafted|41.7 mean|34.3 mean|
+
+Both prefill rows are engine-side. The gap is 2.3x at 8k and 3.3x at 32k on these rows, and 3.5x in real agent traffic.
+
+It also passed my identity gate 10 for 10. It is the only engine that did.
+
+Then I ran it as a coding agent on my game bench, four cells. It scored 14, 14, 15 and 15 out of 19 against 15-18 for my stack. Across four builds it never shipped the laser powerup or the obstacle pad, and always picked the slow ball speed.
+
+The best cell ran at their native 32k budget with unclipped thinking, 22.9k tokens in one turn. It still shipped neither feature, and the serve stayed slow. Those are checkpoint traits, not budget artifacts.
+
+Good fast lane, not my daily driver.
+
+If you run it: set BIOS UMA to Auto. Its n-gram table pages through host cache, and with 16G carved out one 15-token request took 213 seconds and 112 GiB of reads. On Auto the same request took 0.47 seconds.
+
+# Prefill is where the real gap is
+
+The number to compare with is halogen's changelog: **1,246 tok/s at 8k, 1,424 at 32k, 1,358 at 131k** on 0.5.3. My stack does 539 t/s at 8k and 433 at 32k, and its 0.4.4 build measured 1,133 and 1,240 on my board, which runs a 70 W power limit. In real agent traffic my stack measures 293 t/s, so a 10k-token prompt is 34 seconds to first token versus about 10.
+
+Why the gap: halogen is a from-scratch ROCm engine with kernels written for this one GPU and one model family, plus a pre-tuned GEMM plan (per-shape kernels measured on this hardware). Its 0.5.3 speedup came from replacing a CPU sort on the expert ordering with a stable count, which kept the GPU from waiting. llama.cpp's Vulkan MoE path is general-purpose and shader-bound at agent batch sizes, so it leaves much of the GPU's matrix throughput unused, a kernel gap rather than a silicon one.
+
+Decode is a solved argument by comparison. Every llama.cpp serial number sits in the same 14-28 t/s bucket, and halogen's own engine only reaches the mid-30s. Drafting moves it by content, not by fork.
+
+# What would make it my daily driver
+
+Speed is no longer the blocker, and their changelog discipline is better than most open repos. Four things stand between it and being my agent engine:
+
+1. An agentic gate in the release tests. Their gates catch identity, speed, and wedges, but nothing catches a model that reads a contract and ships neither required feature, four builds running. A weekly coding-agent cell with a feature checklist would have flagged it.
+2. A deeper drafter. MTP depth 1 only ties sixvolts on copy-heavy code in u/SelfRefDev's table, and repetitive output is where agents live. A depth 2 or 3 tree raises the code ceiling without touching the model.
+3. Structured output. 0.5.4 refuses `response_format` instead of silently returning prose, which is the honest move, but agent harnesses lean on JSON mode. Constrained decoding, or a documented tool-call guarantee, closes it.
+4. An absolute quality line. The paired delta of 0.0006 nats is internal arithmetic; a wikitext PPL next to it, plus the per-tensor quant map, would let outsiders compare against GGUF builds with arithmetic instead of trust.
+
+A middle memory mode, pinning most of the model but leaving headroom for a desktop session, would make it easier to live with. But memory ergonomics are not what disqualifies it. The quality gate is.
+
+# Bottom line
+
+For agentic coding, run Nathan's toolbox, and keep the drafter off where reruns must be exact. It is the only stack that scored 15-18 on my game bench. Its prefill gap costs about 24 seconds to first token on a 10k read, and that is the price.
+
+halogen is not it, and not for the reasons the thread argues. It is faster on prefill and it passes every identity gate I ran. As a coding agent it scored 14, 14, 15, 15, it never shipped the two contract features [my harness](https://github.com/aic0d3r/neon-ladder) requires across four builds, and it always picked the slow ball speed. Those are checkpoint traits, not speed or budget artifacts.
+
+The operational costs are real too: closed kernels, 126 GB of its own weight format, no CPU-expert knob, and a headless pinning regime. It is the best fast lane in the thread, not a daily driver.
+
+# One ask
+
+If you run a Strix Halo fork, post the perplexity line from your own log next to the speed number. None of the open forks named in the thread publishes one. It is one command, and any of PPL, KLD, or a token-for-token diff against a known-good build settles it.
+
+    # test set (once, from the llama.cpp repo root)
+    ./scripts/get-wikitext-2.sh
+    
+    # PPL on the GPU, paste the ""Final estimate"" line
+    llama-perplexity -m your-model.gguf -f wikitext-2-raw/wiki.test.raw -ngl 99
+    
+    # KLD against a known-good build; the logits file is tens of GiB, write it once
+    llama-perplexity -m known-good.gguf -f wikitext-2-raw/wiki.test.raw -ngl 99 --kl-divergence-base ref.kld
+    llama-perplexity -m your-model.gguf -f wikitext-2-raw/wiki.test.raw -ngl 99 --kl-divergence-base ref.kld --kl-divergence
+    
+    # temp-0 rerun diff; add your fork's drafter flag to the second run
+    llama-cli -m your-model.gguf -p ""The capital of France is"" -n 200 --temp 0 --seed 1 > serial.txt
+    llama-cli -m your-model.gguf -md your-drafter.gguf -p ""The capital of France is"" -n 200 --temp 0 --seed 1 > spec.txt
+    diff serial.txt spec.txt
+
+# Sources and related posts
+
+* The bench behind every score here: [neon-ladder, a playtest-graded benchmark for local coding agents](https://www.reddit.com/r/LocalLLaMA/comments/1w6cjm5/neon_ladder_a_playtestgraded_benchmark_for_local/), [repo](https://github.com/aic0d3r/neon-ladder).
+* The other model in this series: [Qwen3.8-27B on Strix Halo, the full build guide](https://www.reddit.com/r/LocalLLaMA/comments/1vsw6nz/qwen3827b_q5_k_xl_on_strix_halo_at_31_ts_decode/).
+* The daily driver in this post, and the model I graded: [Qwen3.8-Flash-Next at 40 t/s sustained on Strix Halo](https://www.reddit.com/r/StrixHalo/comments/1w6cf5t/qwen38flashnext_on_strix_halo_40_ts_sustained/).
+* Running the agent on this rig: [pi + llama.cpp setup guide](https://www.reddit.com/r/StrixHalo/comments/1w6c5nz/running_a_local_coding_agent_on_strix_halo_with/).
+* The MoE side of this machine: [DeepSeek V4 Flash 0731 at 27+ t/s decode](https://www.reddit.com/r/LocalLLaMA/comments/1vlmh0b/deepseek_v4_flash_0731_at_27_ts_decode_on_strix/).
+* How I measure on this box: [the methodology thread](https://www.reddit.com/r/LocalLLaMA/comments/1vduxth).
+
+*Note: the writing is AI-assisted editing; the research, debugging, and every number are from my own runs on this machine.*",evidence_based,prelabeled
