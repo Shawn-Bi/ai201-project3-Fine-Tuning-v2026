@@ -60,42 +60,48 @@ The classifier judges each post on three questions:
 
 ## Label Taxonomy
 
-<!-- Each label: a one-sentence definition and two real examples from your
-     reading. Then your decision rule for the hardest boundary.
+Community: r/LocalLLaMA
 
-     The decision rule is worth a point on its own and it's the thing most
-     people leave out. Every taxonomy has a hardest boundary. Name yours. -->
+### `evidence_based`
 
-### `label_one`
-
-**Definition:**
+**Definition:** The post contains at least one checkable piece of evidence: test numbers, test conditions (hardware/model/quantization), an official link, or raw output.
 
 **Example 1:**
->
+> "MoE offload on a 3090: prefill 345 -> 466 t/s" — before/after numbers, hardware, and commands. https://www.reddit.com/r/LocalLLaMA/comments/1xx1owx/
 
 **Example 2:**
->
+> "Berth v0.6.0" — measured counts on an RTX 4090 workstation and an official repo link. https://www.reddit.com/r/LocalLLaMA/comments/1xx9fjs/
 
-### `label_two`
+### `unsupported_claim`
 
-**Definition:**
+**Definition:** The post makes a judgment about a model or tool, but contains none of the evidence above.
 
 **Example 1:**
->
+> "AI prose feels so bad to read..." — judges local models' prose with no evidence. https://www.reddit.com/r/LocalLLaMA/comments/1xuqyfu/
 
 **Example 2:**
->
+> "Finally clicked for me: local AI is the future" — opinion and prediction, no measurement. https://www.reddit.com/r/LocalLLaMA/comments/1xwf8bb/
+
+### `question`
+
+**Definition:** The post contains a sentence asking others for help.
+
+**Example 1:**
+> "Best direction to go for my setup EPYC 32core..." — asks for hardware and software advice. https://www.reddit.com/r/LocalLLaMA/comments/1xx6dpd/
+
+**Example 2:**
+> "Is there a community about finetuning..." — asks where to find a community. https://www.reddit.com/r/LocalLLaMA/comments/1xwyfr8/
 
 ### The hardest boundary
 
-**Which two labels:**
+**Which two labels:** `question` vs `evidence_based`
 
-**The decision rule I used every time:**
-<!-- e.g. "If the post names a specific checkable fact, it's `analysis`, even
-     if the tone is heated." -->
+**The decision rule I used every time:** If a post asks others for help, label it `question`, even if it contains test data.
 
-
-
+**Supporting rules:**
+- A closing "thoughts?" does not count as asking for help; label by the body.
+- News posts are `evidence_based` only if they include an official link.
+- Judge only by the post's text. Evidence that appears only in an image does not count.
 ---
 
 ## The Dataset

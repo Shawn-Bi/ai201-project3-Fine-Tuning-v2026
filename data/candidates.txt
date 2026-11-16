@@ -1,0 +1,185 @@
+LABEL: evidence_based  
+TITLE: UI native scheduling, engine swap board, and more (Berth v0.6.0)  
+BODY:
+
+I’m providing an update! We have around 300 berth users now so the project is moving fast.
+
+Recent updates for v0.6.0:
+
+- v0.6.0 gives each card a schedule
+- berth train runs a training that nothing automated can interrupt
+- learned engine sizes (berth learns your engines resource claims)
+
+A month on the reference workstation
+
+berthd counts every handoff it makes, and the harbor's board shows every handoff from one RTX 4090 workstation between 2026-10-12 and 2026-11-13, running llama-swap, NInfer, Strata, ComfyUI, coding agents and games:
+
+What Berth did | Count  
+Requests that waited for the card instead of loading on top of the engine holding it | 1,136  
+Engines drained at a reply or job boundary to make room | 901  
+VRAM handed from one engine to the next | 23.9 TiB  
+Processes holding VRAM without a lease, reported and left running | 573  
+Swaps between two engines of equal priority that the ranking stopped | 57  
+Releases that stalled and were caught before the card stayed full | 4  
+Requests refused after their wait ran out | 24
+
+Project: https://github.com/T-Crypt/berth
+
+URL: https://www.reddit.com/r/LocalLLaMA/comments/1xx9fjs/ui_native_scheduling_engine_swap_board_and_more/  
+RULE: Rule 3. The release announcement links to the official Berth repository and reports measured counts from a specified RTX 4090 workstation.
+
+LABEL: evidence_based  
+TITLE: Model / harness combination: what works best?  
+BODY:
+
+If you are wondering what model / harness combination works the best, here are my findings so far:
+
+- Model is way more important than the harness, best so far Qwen Flash Next even with low quant outperform Qwen 3.8 27B
+- The inference engine is way more important than the harness, because the size of the context windows can dramatically increase performance. AND because speed make the difference between something useable and something that won't work.
+- Harness optimised for coding like OpenCode or PI outperform more generic agent like OpenClaw and Hermes, even on mondane task like reading emails, making purchase on a store or complex vision.
+
+URL: https://www.reddit.com/r/LocalLLaMA/comments/1xx83x3/model_harness_combination_what_works_best/  
+RULE: The attached benchmark grid shows scores and runtimes for named model, quantization, and harness combinations. The title introduces the comparison that the author reports in the body.
+
+LABEL: evidence_based  
+TITLE: MoE offload on a 3090: prefill 345 -> 466 t/s by tuning cudaMemcpy (Qwen3.6 35B-A3B)  
+BODY:
+
+I made a tool that tunes copies that speeds up CPU offloading.
+
+1 3090 + 7800X3D
+
+llama-bench -m Qwen3.6-35B-A3B-Q8_0.gguf -ngl 99 -fa 1 -ot exps=CPU -p 2048 -n 0 -r 3
+
+cmt tune -- llama-bench -m Qwen3.6-35B-A3B-Q8_0.gguf -ngl 99 -fa 1 -ot exps=CPU -p 2048 -n 0 -r 3
+
+before: prefill 345 t/s  
+after: prefill 466 t/s
+
+blog: https://maknee.github.io/blog/2026/CudaMemcpy/  
+code: https://github.com/Maknee/cudamemcpy-tuner
+
+URL: https://www.reddit.com/r/LocalLLaMA/comments/1xx1owx/moe_offload_on_a_3090_prefill_345_466_ts_by/  
+RULE: The post gives before-and-after throughput, hardware, the model quantization, and both benchmark commands.
+
+LABEL: unsupported_claim  
+TITLE: Finally clicked for me: local AI is the future, not cloud AI  
+BODY:
+
+Maybe this is kind of obvious to others, but it just dawned on me even though I've been lurking this sub since the original LLaMA. I was watching this (excellent, as always) video by Gamers Nexus. Steve Burke was bashing on Tim Sweeney (CEO of Epic Games) for being so pro AI, and I found myself feeling a bit of cognitive dissonance. On the one hand I hate that hardware prices are so high, I hate the billionaires inflating the AI bubble and raking in the profits, I hate greedy corps trying to replace jobs with AI, and I hate the data center build out. But on the other hand I'm a developer and AI has given me superpowers. I felt weird, because Burke was dumping on Epic Games for embracing vibe coding, but vibe coding has 100x'd my output, allowed me to pursue so many passion projects, and the AI's output is oftentimes better than what I would've written anyway. I felt like the message of the video was 'all AI is bad', but I realized that it's more nuanced than that. Cloud AI is bad. Cloud AI is the problem, not AI in general. With local AI, we can have our cake and eat it too: cheap, powerful consumer hardware for running local AI and gaming, no censorship, data, or privacy issues, less data centers, less profit going to billionaires, and unlimited tokens to vibe code whatever the hell we want. Hope the datacenter bubble bursts soon.
+
+TLDR: dum dum realizes that the future is local AI bc it's a win-win-win-win for average people
+
+EDIT: to the naysayers, I propose this future: in two years (though given trajectory, probably less), a model the size of Qwen 3.8 Flash Next with the capability of Opus 5.5, running locally in most PCs on energy-efficient NPUs
+
+URL: https://www.reddit.com/r/LocalLLaMA/comments/1xwf8bb/finally_clicked_for_me_local_ai_is_the_future_not/  
+RULE: The author argues for local AI over cloud AI using personal impressions and a prediction. The “100x” figure has no measurement method or baseline, and the linked commentary video is an unofficial source.
+
+LABEL: unsupported_claim  
+TITLE: Hot take: frontier models haven’t actually become much smarter  
+BODY:
+
+I know this is a controversial take, but I would like to hear others’ opinions: LLMs have become much more useful, but I’m not convinced their “raw intelligence” has improved nearly as much as their overall performance suggests.
+
+Context: I work with LLMs as a SWE, as a hobbyist experimenting with local models, and professionally integrating AI into products. That includes building our own harnesses: context retrieval, prompts, and custom tools that give models structured access to complex data.
+
+By “raw intelligence,” I mean using what is given in the most efficient way to solve a problem, especially when information, tools, and time are limited. Given plenty of time and tools, planning and long-term agentic capabilities become more important—but that’s a different comparison.
+
+Three observations brought me here.
+
+First, building production harnesses: once a harness+model worked well, achiving a given score over a golden dataset, switching to a newer frontier model rarely improved results. Most failures within our time/precision constraints came down to context engineering or inadequate tools. These tools included code generation for analysis and complex relational queries, so plenty of "time to shine" for smart models. Newer models sometimes found more creative workarounds, but these were usually too slow or unreliable for production. We ended up improving the harness anyway, leaving the newer models' gains less important.
+
+Second, software engineering: newer models have more often improved results here, but the same model can also perform quite differently across harnesses. In complex codebases, that shows up in how much correction and review senior engineers have to provide. The harness seems to do a lot of heavy lifting here, too.
+
+Third, local models: smaller models have started performing so well that I question how many parameters efficient problem solving actually needs. Frontier models clearly add broader knowledge, nuance, best practices, and specific baked-in skills. But I don’t always see a proportionate advantage in using it to solve a problem, when the relevant knowledge is already provided.
+
+I’m not saying models haven’t gotten smarter. Better tool calling, fewer hallucinations, and longer context windows are real improvements that make them much more useful. Nor do these observations prove that intelligence needs few parameters or that frontier progress has stalled.
+
+But my broader take is:
+
+- efficient problem solving may need fewer parameters than generally assumed,
+- the frontier has moved less in “raw intelligence” than the overall gains - and talk of approaching superintelligence - suggest, and
+- much of the progress over the last 12–24 months comes from cumulative model improvements and better harnesses, rather than a dramatic or exponential jump in raw intelligence.
+
+This take seems at odds with both the hype and the doom we see in the media, which I suspect are co-fueled by the upcoming AI IPOs. Does it match others’ experience - or are you seeing vast reasoning gains in frontier models that better context and tools can’t make up for?
+
+URL: https://www.reddit.com/r/LocalLLaMA/comments/1xwegdi/hot_take_frontier_models_havent_actually_become/  
+RULE: Rule 2. The closing question invites discussion of the author’s opinion. The body refers to internal evaluations in general terms and supplies no scores, named test setups, official links, or raw outputs.
+
+LABEL: unsupported_claim  
+TITLE: AI prose feels so bad to read in part because we always approach it from a critical lens, "is this good enough?"  
+BODY:
+
+Having to ask that question necessarily kills the ability to truly enjoy the prose the way we would in a book.
+
+Trust and good faith are incredibly important here. Having compassion for the machine, understanding what it is TRYING its best to say will give you a better experience than expecting it to one shot Moby Dick.
+
+The prose is more likely to piss you off if you're looking for errors. Locals are now at least coherent enough that things being straight up wrong are less common.
+
+All art requires a good faith mindset in order to properly and fully enjoy it.
+
+URL: https://www.reddit.com/r/LocalLLaMA/comments/1xuqyfu/ai_prose_feels_so_bad_to_read_in_part_because_we/  
+RULE: The author judges the quality of local models’ prose and claims their errors are less common without giving test numbers, test conditions, official links, or sample outputs.
+
+LABEL: question  
+TITLE: Best direction to go for my setup EPYC 32core + 512GB DDR4 + 44GB GPU ?  
+BODY:
+
+Just looking for some advice on what is possble with my setup and speeds I should be gettingI know it won't be super fast tps but I was more after getting the bigger models to run.
+
+This is my spec:
+
+Epyc 7502p - 32 Core  
+Gigabyte MZ32-AR0 - 8 channel memory  
+512GB DDR4  
+1x 4070 12GB  
+2x 4060 16GB
+
+quite a few implementations I see which can be confusing.  
+Is this build even useful now? that we have Project Maya which you can stream from the NVME drive?
+
+Anyone have similar setups and what to expect, what software best to use
+
+URL: https://www.reddit.com/r/LocalLLaMA/comments/1xx6dpd/best_direction_to_go_for_my_setup_epyc_32core/  
+RULE: Rule 1. The author asks for advice on what the hardware can run and which software to use.
+
+LABEL: question  
+TITLE: Is there a community about finetuning and training models?  
+BODY:
+
+There seems to be a lot of discussion here about inference and using the models, but is there anywhere where discussion about making them is more common?
+
+URL: https://www.reddit.com/r/LocalLLaMA/comments/1xwyfr8/is_there_a_community_about_finetuning_and/  
+RULE: Rule 1. The author asks readers to point them to a community focused on training and fine-tuning models.
+
+LABEL: question  
+TITLE: RustingStrata has a new built-in chat page. What is missing?  
+BODY:
+
+RustingStrata is one Rust binary. rustingstrata serve starts the OpenAI-compatible server, and the same port serves a chat page at /. No Node, no Docker, no second install. The page was rebuilt for 1.2.3 and I want to know what people would add before I go further, I mean maybe allow to edit files and etc. like in DeepSeek harness, or maybe there are something that you wish to be in original Strata, so I can add it in my.
+
+What it does now:
+
+- Pick a model from the models folder and load it from the page, with the load options (context, MTP drafts, KV cache format, VRAM margin, prefill chunk).
+- Chats are kept in the browser (localStorage), with search, rename, export and import. Nothing leaves the machine.
+- Edit a message, regenerate a reply, continue a reply that stopped, copy, delete.
+- Attach an image for models with a vision tower.
+- Thinking is folded above the answer, with a switch to turn it on or off.
+- Sampler presets (temperature, top-k, top-p, seed) a system prompt for every chat, and instructions for one chat.
+- Speed of each reply in tok/s.
+- If the model was never calibrated on this machine, the page says so and offers to run the calibration.
+- The accent color follows the model family, or you set your own(Just cool visual feature, like if you load Qwen model, then website is purple, if DeepSeek, then it's blue and etc.).
+
+What it is not: a coding agent. It does not read or edit files. For that, point OpenCode, Claude Code or another CLI at the same server, the page is for quick chat and for trying a model.
+
+Questions:
+
+- What do you open a local web chat for, if you already use a CLI agent?
+- Which one feature would make you keep this page open instead of another UI?
+- What do you use in other local chat pages that is missing here?
+
+Any Feedback would be very useful, ty!  
+Repo RustingStrata: https://github.com/RustingStudio/RustingStrata
+
+URL: https://www.reddit.com/r/LocalLLaMA/comments/1xwwv88/rustingstrata_has_a_new_builtin_chat_page_what_is/  
+RULE: Rule 1. The author asks readers to identify missing features and help decide what to build next.
