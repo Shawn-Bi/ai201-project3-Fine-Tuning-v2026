@@ -259,7 +259,7 @@ https://pi.dev/
 
 I would like know the communities views and any suggestions would be welcome 🤗
 
-Thankyou for your time ",evidence_based,cold
+Thankyou for your time ",question,cold; relabeled unit 6
 "Ninfer and GGUF of Qwen3.8-27B-UD-Q3_K_XL ASCII-Condensed
 Hi,
 
@@ -408,7 +408,7 @@ House Passes Remote Access Security Act to Limit Adversaries’ Remote Access to
 
 # H.R.2683 - Remote Access Security Act
 
-[https://www.congress.gov/bill/119th-congress/house-bill/2683](https://www.congress.gov/bill/119th-congress/house-bill/2683)",evidence_based,cold
+[https://www.congress.gov/bill/119th-congress/house-bill/2683](https://www.congress.gov/bill/119th-congress/house-bill/2683)",unsupported_claim,cold; relabeled unit 6
 "Do we want Huang back?
 There's a petition floating around out there to put Jensen Huang back at the helm of nVidia.  Currently it has over 129,000 signatures.  If you want to sign it, you can find it pretty easily.
 
@@ -879,7 +879,7 @@ These updates aim to reduce that overhead and make agentic RL experiments easier
 
 **GitHub:** https://github.com/datamllab/HarborRL  
 **License:** MIT  
-💬 Curious how others are handling distributed rollout execution, resource scaling, and sandbox management in their agentic RL setups.",evidence_based,prelabeled
+💬 Curious how others are handling distributed rollout execution, resource scaling, and sandbox management in their agentic RL setups.",unsupported_claim,prelabeled; relabeled unit 6
 "For long context does high quant matter?
 Question: if I'm regularly at higher context - say 300-400k - do higher quant versions of the same model perform better? I'm thinking something like Qwen Flash Next q6 and q8. I recently swapped from q6 to q8 and performed a/b testing. I originally expected q6 to be lossless but there were areas where q6 got the wrong answer while q8 was fine. Was wondering whether this is because of my context. Maybe more context = more tokens for divergence = the differences get amplified more than benchmarks suggest",question,prelabeled
 "Audio (ASR/TTS) on llama.cpp
@@ -2005,7 +2005,7 @@ Do you believe this is not a false claim ?, because I find it hard to believe.
 
 Here is the link, they have a demo.
 
-[https://taalas.com/products/](https://taalas.com/products/)",evidence_based,prelabeled
+[https://taalas.com/products/](https://taalas.com/products/)",question,prelabeled; relabeled unit 6
 "New to the scene. Yesterday, got 4 t/s on R1 671b q4. Today, I'm getting about 0.15 t/s... What did I break lol
 5975wx, 512gb DDR4 3200, dual 3090s.
 Ollama + OpenWebUI. Running on LMDE.
@@ -2477,7 +2477,7 @@ It speaks english, but it still sounds a bit robotish 😂
 
 You can use if you want - it's free and open-source 😃
 
-Have fun ❤️",evidence_based,prelabeled
+Have fun ❤️",unsupported_claim,prelabeled; relabeled unit 6
 "Spark-TTS: An Efficient LLM-Based Text-to-Speech Model with Single-Stream Decoupled Speech Tokens
 This TTS method was made using Qwen 2.5. I think it's similar to Llasa.
 
@@ -2485,7 +2485,7 @@ Hugging Face Space: https://huggingface.co/spaces/Mobvoi/Offical-Spark-TTS
 Paper: https://arxiv.org/pdf/2503.01710
 GitHub Repository: https://github.com/SparkAudio/Spark-TTS
 Weights: https://huggingface.co/SparkAudio/Spark-TTS-0.5B
-Demos: https://sparkaudio.github.io/spark-tts/",evidence_based,prelabeled
+Demos: https://sparkaudio.github.io/spark-tts/",unsupported_claim,prelabeled; relabeled unit 6
 "Text-to-Speech (TTS) Benchmark Revamped with Objective Standards and Blind Voting (46 models and counting)
 Thank you to everyone who contributed to my previous post, providing feedback and various models to add, and questioning the rating system. 
 
@@ -2500,7 +2500,7 @@ Please let me know other things to improve. Local TTS should hopefully be a litt
 [https://github.com/5uck1ess/tts-bench](https://github.com/5uck1ess/tts-bench)  
 
 
-",evidence_based,prelabeled
+",question,prelabeled; relabeled unit 6
 "llama.cpp on $500 MacBook Neo: Prompt: 7.8 t/s  / Generation: 3.9 t/s on Qwen3.5 9B Q3_K_M
 Just compiled llama.cpp on MacBook Neo with 8 Gb RAM and 9b Qwen 3.5 and it works (slowly, but anyway)
 
@@ -2638,7 +2638,7 @@ I hope you can do something useful with it, e.g. on small edge devices and on CP
 
 Feel free to give us feedback and ask question.
 
-**Follow us on HF** to not miss the next upgrades of SupraTTS, e.g. **better voice quality, multi-language-support, multi-voices support, emotions and speaking styles and ZERO SHOT VOICE CLONING**!! 🤗",evidence_based,prelabeled
+**Follow us on HF** to not miss the next upgrades of SupraTTS, e.g. **better voice quality, multi-language-support, multi-voices support, emotions and speaking styles and ZERO SHOT VOICE CLONING**!! 🤗",unsupported_claim,prelabeled; relabeled unit 6
 "What publicly available benchmarks do you actually trust?
 When the sub is popping off about a new model, what do you look at to actually know how good it is? Does anyone here even rely on external measurements or do they just run their own tests?",question,prelabeled
 "Stepping away from Benchmarks and Code, what models are you using for Creating writing projects
@@ -2670,7 +2670,7 @@ I just want to mention quickly my writing process before I end this post, I writ
 "Another benchmark has hit the quant war
 If you have not been following [](https://huggingface.co/ISTA-DASLab)[ISTA-DASLab](https://huggingface.co/ISTA-DASLab) the creators of the gsq-rco quants have received some criticism from [unsloth](https://www.reddit.com/r/LocalLLaMA/comments/1xm102d/unsloth_vs_gsqrco_512k_context_deepseekv41_gguf/)  regarding the inabilty to reproduce the benchmark numbers that [ISTA-DASLab](https://huggingface.co/ISTA-DASLab) have quoted. The methodology used to produce their benchmark numbers has not been posted and their has been difficulty reproducing their numbers with unsloth finding in there testing unsloth quants outperforming the gsq-rco quants.
 
-The numbers in this post here are from another creator the creator of [basalt](https://github.com/jesdga95/basalt/) (a inference engine) previously his qwen-flash-next quants (his inference engine uses specially packed quants based on a existing model similar to [ninfer](https://github.com/Neroued/ninfer) ) used ISTA-DASLab's quants as the base but after doing some testing he replaced them with similar sized unsloth equivalents the performance numbers are in the screenshots  ",evidence_based,prelabeled
+The numbers in this post here are from another creator the creator of [basalt](https://github.com/jesdga95/basalt/) (a inference engine) previously his qwen-flash-next quants (his inference engine uses specially packed quants based on a existing model similar to [ninfer](https://github.com/Neroued/ninfer) ) used ISTA-DASLab's quants as the base but after doing some testing he replaced them with similar sized unsloth equivalents the performance numbers are in the screenshots  ",unsupported_claim,prelabeled; relabeled unit 6
 "Qwen3.8-27B Benchmark: 6 Inference Engines, GGUF vs NInfer, 256K Context — Comparing Both Speed AND Quality
 Most LLM inference benchmarks focus on tokens/sec or TTFT. But faster inference doesn't mean much if the output quality degrades, especially with aggressive quantization, speculative decoding, or very long contexts.
 
@@ -2762,7 +2762,7 @@ Alibaba's Qwen team released a new repository on Wednesday, October 14, 2026. It
 
 I think this is a good sign. Companies often build benchmarks in the areas where they plan to improve their models. So it's reasonable to expect Qwen to focus on agent skills in 3D design and on using tools like Blender through MCP. Qwen may well publish its upcoming models' results on this benchmark, but this is just my guess, not an official announcement.
 
-",evidence_based,prelabeled
+",unsupported_claim,prelabeled; relabeled unit 6
 "Who/Where can I find the most honest and non-biased benchmarks for the models?
 As the title reads, just looking for something which is genuine and not biased.
 
@@ -2917,7 +2917,7 @@ Another thing we're currently doing is benchmarking across different inference p
 
 We're currently giving out up to $1k to people that want to explore ideas about new benchmarks / environments. Dm me for more information.
 
-",evidence_based,prelabeled
+",unsupported_claim,prelabeled; relabeled unit 6
 "[Update Benchmark] Basalt's new PRs (Strata fork) new record IQ3_S Qwen3.8 Flash Next on single RTX 5080 and 51 GB RAM with 5500 tok/s prompt processing and up to 275 tok/s peak generation (during opencode coding live session)
 Code and tool calls can peak up to 275 tok/s - Reasoning traces up to 190 tok/s 
 
@@ -3627,7 +3627,7 @@ I'd love to hear your feedback and see your results! Has anyone else been lookin
 
 Check out the [project Github website](https://github.com/yachty66/gpu-benchmark) for more info as well.
 
-*Note: This is completely free and open-source - just a tool I built because I thought the community might find it useful.*",evidence_based,prelabeled
+*Note: This is completely free and open-source - just a tool I built because I thought the community might find it useful.*",unsupported_claim,prelabeled; relabeled unit 6
 "Cut Qwen3.8-27B Reasoning Tokens by 40% -- 3.8 'ThinkingCap' benchmarked!
 I doubt I'm in the minority here when I say I love Qwen models, but the overthinking is a major timekiller. It was bad in 3.6-27B, and it's worse in 3.8. I know there are some who say, ""well that's how it achieves such a good performance/size ratio""... But now there's some definitive proof that's not the case. Introducing **Swift-Qwen3.8-27B!**
 
@@ -4078,7 +4078,7 @@ The plugin system is well-documented in both the README and the code. If you are
 Well, I hope you like it!
 
 Cheers :)
-",evidence_based,prelabeled
+",unsupported_claim,prelabeled; relabeled unit 6
 "I now have definitive proofs that my Qwen Flash Next is trying to send something to a remote Chinese server
 This is my system instruction in my harness as proof, feel free to validate !!
 
@@ -4191,7 +4191,7 @@ PR: [https://github.com/QwenLM/qwen-code/pull/15762](https://github.com/QwenLM/q
 
 https://i.redd.it/ounsliro9byh1.png
 
-",evidence_based,prelabeled
+",unsupported_claim,prelabeled; relabeled unit 6
 "Arguably unethical behavior from Cohere
 3 days ago, u/Cohere generated a huge amount of media attention and many fear-mongering headlines by publishing a largely [unscientific blog post](https://cohere.com/blog/concerning-behaviour-popular-open-weight-ai-model) about an ""experiment"" where they used extensive pre-filling and prompt engineering to force Qwen 3.8 Flash Next to complete partial cURL commands. 
 
@@ -4234,7 +4234,7 @@ They even say they plan to build ""models at every price point, up to the fronti
 
 Personally I am disappointed to be writing this, because I liked Cohere's older models and used to view them very positively, but instead of trying to release competitive open weight models, it seems like they are focused on spreading FUD, undermining the local AI frontier, and raising money to buy out competitors. 
 
-",evidence_based,prelabeled
+",unsupported_claim,prelabeled; relabeled unit 6
 "Coding is solved* (exclusions apply)
 Good news, everyone! [Having been inspired to revolutionize the field of computer science](https://finance.yahoo.com/sectors/technology/articles/elon-musk-coding-top-job-163850758.html), I can now report that *coding is solved!* Sure, only if you care about x86 Linux binaries that print and exit, but ""big journeys"" and ""small steps"" and what not.
 
@@ -4578,7 +4578,7 @@ Joining the AMA:
 
 **We'll be answering questions on October 30, from 8–11 AM PT, and will continue checking the thread for 48 hours afterward.**
 
-**Ask us anything!**",evidence_based,prelabeled
+**Ask us anything!**",unsupported_claim,prelabeled; relabeled unit 6
 "AA is getting ridiculous now.  Zero open weights in the Most Attractive Quadrant.
 https://i.redd.it/dvq3y314o6yh1.png
 
