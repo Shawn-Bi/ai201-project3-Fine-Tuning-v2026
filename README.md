@@ -39,10 +39,9 @@
 
 ## What This Does
 
-<!-- Your community, and what your classifier sorts posts into. Three or four
-     sentences. -->
+TakeMeter sorts r/LocalLLaMA posts into three labels: `evidence_based` (makes a claim backed by a checkable result), `unsupported_claim` (makes a judgment with no evidence), and `question` (asks others for help). It's a small fine-tuned text classifier trained on 196 posts I labeled.
 
-The classifier judges each post on three questions:
+When I first read the community, I noticed three differences:
 
 1. **Does it show concrete test results?** Some posts report generation
    speed, response latency, or how many questions the model got right; others
@@ -111,64 +110,35 @@ Community: r/LocalLLaMA
 
 ## The Dataset
 
-<!-- Where you collected from, how you labelled, your counts, and three hard
-     cases. -->
+**Where the posts came from:** r/LocalLLaMA. I gathered post links from the New feed, Top (month), and searches for "t/s" and "benchmark" (the searches were to find more evidence-heavy posts). Post text was fetched from the Arctic Shift public Reddit archive with a script. 196 posts saved; 4 skipped (3 duplicates, 1 missing from the archive).
 
-**Where the posts came from:**
-
-**How I labelled them:** <!-- Cold first? Pre-labelled with AI and corrected?
-Say so plainly — the disclosure is required, not penalised. -->
+**How I labelled them:** I labeled the first 20 posts cold, with no AI help (marked `cold` in the note column). An AI pre-labeled the other 176 using my definitions and rules (marked `prelabeled`). I then reviewed all 176 and changed 0 of them.
 
 **Counts per label:**
 
 | Label | Count | Share |
 |---|---|---|
-|  |  |  |
-|  |  |  |
-|  |  |  |
-| **Total** |  | 100% |
+| evidence_based | 76 | 39% |
+| unsupported_claim | 60 | 31% |
+| question | 60 | 31% |
 
-**Three hard cases**
-
-<!-- Any post that made you pause: what it was, which two labels it could have
-     been, and what you chose. These are worth more than the easy 190. -->
-
-**1.**
-> *The post:*
->
-> *Could have been:*
->
-> *I chose, because:*
-
-**2.**
-> *The post:*
->
-> *Could have been:*
->
-> *I chose, because:*
-
-**3.**
-> *The post:*
->
-> *Could have been:*
->
-> *I chose, because:*
+**Hard cases:**
+1. "Model / harness combination: what works best?" — the benchmark results were only in an image; the text was just opinions. → `unsupported_claim`, and I added the rule that evidence only in an image doesn't count.
+2. "Hot take: frontier models haven't actually become much smarter" — long argument that ends by asking whether others agree. → `unsupported_claim`: asking for opinions isn't asking for help, so I labeled by the body, which has no evidence.
+3. "RustingStrata has a new built-in chat page. What is missing?" — has an official repo link (evidence) but also asks readers specific questions about what to build. → `question`, and I added a rule that specific feature-request questions count as asking for help.
+ 
 
 ---
 
 ## The Training Run
 
-<!-- Your starting model, your settings, and anything you changed and why. -->
+**Starting model:** distilbert-base-uncased
 
-**Base model:**
+**Device:** CPU
 
-**Settings:** <!-- epochs, learning rate, batch size, seed -->
+**Settings:** notebook defaults — 3 epochs, learning rate 2e-5, batch size 16, max 128 tokens per post, seed 42. I changed nothing.
 
-**Anything I changed from the defaults, and why:**
-
-**Split sizes:** <!-- train / val / test, and per-label counts in the test
-split. If a label had fewer than about 8 in test, say so — it explains a lot
-of next unit's variance. -->
+**Split:** 136 train / 30 val / 30 test. Test split per label: evidence_based 12, unsupported_claim 9, question 9 (all at least 8).
 
 
 
@@ -176,26 +146,19 @@ of next unit's variance. -->
 
 ## How I Used AI
 
-<!-- Two specific moments — what you asked, what came back, what you changed.
-
-     ⚠️ Plus disclosure of any pre-labelling. If you had a model pre-label a
-     batch and then read and corrected every one, say that. It's an allowed
-     workflow and disclosing it costs you nothing. Not disclosing it is the
-     problem. -->
-
 **Moment 1**
-
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
+- *What I asked for:* I asked an AI browser assistant to find 3 clear example posts for each of my labels.
+- *What came back:* 9 posts with labels and reasons.
+- *What I changed:* I found 3 of them weren't clear (evidence only in an image, a closing opinion question, a feature-request post). I made them hard cases and added rules for each.
 
 **Moment 2**
+- *What I asked for:* I asked Claude Code to write a script to fetch post text from my list of links.
+- *What came back:* The first request failed with HTTP 403.
+- *What I changed:* I let it add an honest User-Agent naming this as a student project. The script then saved 196 posts.
 
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
+**Pre-labelling disclosure:** Rows 21–196 were pre-labeled by Claude Code using my README definitions and rules. I reviewed all 176 and made 0 corrections. Rows 1–20 were labeled by me with no AI.
 
-**Pre-labelling disclosure:**
+
 
 <!-- ═══════════════════════ UNIT 6 — THE TEST ═══════════════════════
 
